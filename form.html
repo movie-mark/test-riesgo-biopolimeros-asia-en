@@ -829,6 +829,193 @@
       }
     }
 
+    }
+    }
+
+    /* Estilos para la pantalla de Análisis (Checklist/Stepper) */
+    .analysis-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: calc(100vh - 200px);
+      padding: var(--form-spacing-xl);
+    }
+
+    .analysis-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .analysis-stepper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+      position: relative;
+    }
+
+    .stepper-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      position: relative;
+      width: 100%;
+      opacity: 0.3;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(-10px);
+    }
+
+    .stepper-item.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .stepper-item.completed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .stepper-icon-container {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .stepper-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      position: relative;
+      transition: all 0.4s ease;
+    }
+
+    .stepper-item.active .stepper-icon {
+      border-color: var(--form-accent);
+      box-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
+    }
+
+    .stepper-item.completed .stepper-icon {
+      background: var(--form-accent);
+      border-color: var(--form-accent);
+    }
+
+    /* Punto central para estado activo */
+    .stepper-icon .active-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--form-accent);
+      border-radius: 50%;
+      display: none;
+      animation: pulse 1.5s infinite;
+    }
+
+    .stepper-item.active .stepper-icon .active-dot {
+      display: block;
+    }
+
+    /* Checkmark para estado completado */
+    .stepper-icon .check-mark {
+      width: 18px;
+      height: 18px;
+      color: white;
+      display: none;
+    }
+
+    .stepper-item.completed .stepper-icon .check-mark {
+      display: block;
+    }
+
+    .stepper-line {
+      position: absolute;
+      left: 17px;
+      top: 36px;
+      width: 2px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.1);
+      z-index: 1;
+      transition: background 0.4s ease;
+    }
+
+    .stepper-item.completed .stepper-line {
+      background: var(--form-accent);
+    }
+
+    .stepper-content {
+      text-align: left;
+      padding-top: 6px;
+    }
+
+    .stepper-label {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--form-foreground);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.4);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .analysis-title {
+        font-size: 1.5rem;
+      }
+
+      .stepper-label {
+        font-size: 1rem;
+      }
+
+      .stepper-item {
+        gap: 15px;
+      }
+    }
+
+    /* Barra de progreso horizontal superior para análisis */
+    .analysis-global-progress {
+      width: 100%;
+      max-width: 400px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 2px;
+      margin-bottom: 40px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .analysis-global-progress-bar {
+      width: 0%;
+      height: 100%;
+      background: var(--form-accent);
+      transition: width 0.1s linear;
+      box-shadow: 0 0 10px var(--form-accent);
+    }
+
     @media (max-width: 420px) {
       .form-header-top h1 {
         font-size: 0.92rem;
@@ -1316,6 +1503,104 @@
             </div>
           </div>
         </div>
+
+        <!-- Pantalla de Análisis (NUEVO) -->
+        <div class="form-step" id="analysis-step" data-step-type="analysis">
+          <div class="analysis-step">
+            <h2 class="analysis-title">Analizando tu Perfil</h2>
+
+            <!-- Barra de progreso global -->
+            <div class="analysis-global-progress">
+              <div class="analysis-global-progress-bar" id="analysisGlobalProgressBar"></div>
+            </div>
+
+            <div class="analysis-stepper">
+              <!-- Item 1 -->
+              <div class="stepper-item" id="stepper-0">
+                <div class="stepper-icon-container">
+                  <div class="stepper-icon">
+                    <div class="active-dot"></div>
+                    <svg class="check-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="stepper-line"></div>
+                </div>
+                <div class="stepper-content">
+                  <div class="stepper-label">Consolidando respuestas...</div>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="stepper-item" id="stepper-1">
+                <div class="stepper-icon-container">
+                  <div class="stepper-icon">
+                    <div class="active-dot"></div>
+                    <svg class="check-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="stepper-line"></div>
+                </div>
+                <div class="stepper-content">
+                  <div class="stepper-label">Enviando datos al motor de IA...</div>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="stepper-item" id="stepper-2">
+                <div class="stepper-icon-container">
+                  <div class="stepper-icon">
+                    <div class="active-dot"></div>
+                    <svg class="check-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="stepper-line"></div>
+                </div>
+                <div class="stepper-content">
+                  <div class="stepper-label">Comparando con bases de datos clínicas...</div>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="stepper-item" id="stepper-3">
+                <div class="stepper-icon-container">
+                  <div class="stepper-icon">
+                    <div class="active-dot"></div>
+                    <svg class="check-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="stepper-line"></div>
+                </div>
+                <div class="stepper-content">
+                  <div class="stepper-label">Calculando Score de Progresión...</div>
+                </div>
+              </div>
+
+              <!-- Item 5 -->
+              <div class="stepper-item" id="stepper-4">
+                <div class="stepper-icon-container">
+                  <div class="stepper-icon">
+                    <div class="active-dot"></div>
+                    <svg class="check-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <div class="stepper-content">
+                  <div class="stepper-label">Generando reporte personalizado...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
 
       <div class="button-container" id="buttonContainer" style="display: none;">
@@ -1326,8 +1611,8 @@
 
   <script>
     const preguntas = [{ "pregunta": "¿Tiene claro que le aplicaron una sustancia extraña o desconocida en su cuerpo?", "opciones": ["No", "No estoy muy seguro/a", "Sí"], "type": "yes_no_maybe", "index": 1, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Aún no es claro", "description": "Si no estás seguro/a de qué te aplicaron, es útil reunir información básica: lugar, fecha aproximada, y cualquier documento o mensaje. Esto ayuda a orientar la valoración médica y a decidir qué estudios podrían ser necesarios." } }, { "text": "No estoy muy seguro/a", "score_value": 0.6, "recommendation": { "title": "Sospecha parcial", "description": "Muchas personas no reciben información completa sobre el material aplicado. Si hay síntomas locales o generales, una consulta especializada puede aclarar la situación con examen físico y, si corresponde, imágenes o pruebas complementarias." } }, { "text": "Sí", "score_value": 1, "recommendation": { "title": "Exposición probable", "description": "Tener claridad sobre una sustancia desconocida permite evaluar riesgos de manera más directa. Si presentas síntomas, una valoración médica puede ayudar a identificar complicaciones locales y signos de inflamación sistémica." } }] }, { "pregunta": "¿Hace cuánto tiempo le aplicaron la sustancia?", "opciones": ["Menos de 6 meses", "Entre 6 meses y 2 años", "Entre 2 y 5 años", "Más de 5 años", "No lo recuerdo con exactitud"], "type": "multiple_choice", "index": 2, "opciones_completas": [{ "text": "Menos de 6 meses", "score_value": 0.2, "recommendation": { "title": "Periodo reciente", "description": "En los primeros meses pueden aparecer inflamación, dolor y cambios de la piel. Si los síntomas son persistentes o progresivos, conviene una valoración para descartar infección, reacción inflamatoria u otras complicaciones." } }, { "text": "Entre 6 meses y 2 años", "score_value": 0.5, "recommendation": { "title": "Riesgo de evolución", "description": "En este rango pueden aparecer nódulos, endurecimiento o síntomas generales que antes no existían. Un control médico puede identificar signos tempranos de complicación y orientar el manejo." } }, { "text": "Entre 2 y 5 años", "score_value": 0.7, "recommendation": { "title": "Posibles complicaciones tardías", "description": "Algunas complicaciones se manifiestan años después, incluyendo síntomas locales persistentes y signos sistémicos. Si notas empeoramiento, es razonable priorizar una valoración especializada." } }, { "text": "Más de 5 años", "score_value": 1, "recommendation": { "title": "Complicaciones de larga evolución", "description": "Con el tiempo puede aumentar el riesgo de inflamación crónica, migración del material y síntomas sistémicos. Una evaluación completa puede ayudar a definir la severidad y las opciones de tratamiento." } }, { "text": "No lo recuerdo con exactitud", "score_value": 0.6, "recommendation": { "title": "Fecha incierta", "description": "No recordar la fecha es común. Aun así, los síntomas actuales son la prioridad: si hay dolor, secreción, fiebre o empeoramiento, es recomendable valoración médica para determinar el siguiente paso." } }] }, { "pregunta": "¿Presenta dolor en la zona donde fue aplicada la sustancia?", "opciones": ["No", "Ocasional", "Frecuente", "Constante"], "type": "multiple_choice", "index": 3, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin dolor local", "description": "La ausencia de dolor es una señal favorable, pero no descarta otras complicaciones. Si hay cambios visibles o síntomas generales, conviene mantener seguimiento." } }, { "text": "Ocasional", "score_value": 3, "recommendation": { "title": "Dolor intermitente", "description": "El dolor ocasional puede relacionarse con inflamación leve o sensibilidad local. Si aumenta en frecuencia o intensidad, se recomienda evaluación para identificar su causa." } }, { "text": "Frecuente", "score_value": 6, "recommendation": { "title": "Dolor persistente", "description": "El dolor frecuente sugiere inflamación sostenida o reacción local. Una valoración puede ayudar a determinar si hay nódulos, migración u otras complicaciones asociadas." } }, { "text": "Constante", "score_value": 8, "recommendation": { "title": "Dolor constante", "description": "El dolor constante es una señal de alerta clínica que amerita evaluación prioritaria. Puede asociarse a inflamación importante, compromiso tisular o complicaciones que requieren manejo médico." } }] }, { "pregunta": "¿Ha notado inflamación persistente en la zona?", "opciones": ["No", "Leve", "Moderada", "Severa"], "type": "multiple_choice", "index": 4, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin inflamación evidente", "description": "No observar inflamación es positivo. Aun así, si existen otros síntomas locales o generales, una revisión médica puede orientar el riesgo real." } }, { "text": "Leve", "score_value": 3, "recommendation": { "title": "Inflamación leve", "description": "La inflamación leve puede ser intermitente y asociarse a irritación local. Si persiste o progresa, conviene una evaluación para descartar complicaciones." } }, { "text": "Moderada", "score_value": 6, "recommendation": { "title": "Inflamación moderada", "description": "La inflamación moderada sostenida puede indicar reacción inflamatoria crónica. Una valoración clínica puede ayudar a decidir si se requieren estudios por imágenes." } }, { "text": "Severa", "score_value": 8, "recommendation": { "title": "Inflamación severa", "description": "Inflamación severa es una señal de alarma, especialmente si hay dolor, calor local o cambios en la piel. Recomendable atención médica prioritaria." } }] }, { "pregunta": "¿Ha sentido endurecimiento o formación de masas/nódulos en la zona?", "opciones": ["No", "Pequeños", "Múltiples/grandes"], "type": "multiple_choice", "index": 5, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin nódulos aparentes", "description": "No detectar nódulos reduce la probabilidad de reacción local marcada. Aun así, cambios sutiles pueden requerir exploración clínica si hay síntomas." } }, { "text": "Pequeños", "score_value": 4, "recommendation": { "title": "Nódulos pequeños", "description": "Los nódulos pequeños pueden corresponder a inflamación localizada. Una valoración médica puede determinar su naturaleza y si hay signos de progresión." } }, { "text": "Múltiples/grandes", "score_value": 8, "recommendation": { "title": "Nódulos múltiples/grandes", "description": "La presencia de múltiples nódulos o masas grandes sugiere compromiso local significativo. Es recomendable evaluación especializada para estimar extensión y opciones de manejo." } }] }, { "pregunta": "¿Ha tenido cambios de coloración en la piel (rojiza, violácea, oscura) en esa zona?", "opciones": ["No", "Leves", "Notorios"], "type": "multiple_choice", "index": 6, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin cambios visibles", "description": "No hay señales cutáneas evidentes. Mantén vigilancia si aparece dolor, inflamación o sensibilidad, ya que los cambios pueden ser progresivos." } }, { "text": "Leves", "score_value": 3, "recommendation": { "title": "Cambios leves", "description": "Los cambios leves pueden relacionarse con irritación o inflamación superficial. Si aumentan o se acompañan de dolor, conviene valoración médica." } }, { "text": "Notorios", "score_value": 6, "recommendation": { "title": "Cambios notorios", "description": "Cambios notorios en la piel pueden indicar inflamación importante o compromiso de tejidos. Se recomienda evaluación prioritaria, especialmente si hay calor local o dolor constante." } }] }, { "pregunta": "¿Ha presentado salida de líquido, secreción o ulceraciones en la zona?", "opciones": ["No", "Una vez", "Varias veces"], "type": "multiple_choice", "index": 7, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin secreción", "description": "La ausencia de secreción es un buen signo. Si hay dolor o inflamación, aún puede existir reacción local; por eso se recomienda seguimiento si los síntomas persisten." } }, { "text": "Una vez", "score_value": 6, "recommendation": { "title": "Episodio aislado", "description": "Un episodio de secreción o ulceración puede asociarse a inflamación o infección. Es recomendable evaluación médica para descartar complicaciones que requieran tratamiento." } }, { "text": "Varias veces", "score_value": 10, "recommendation": { "title": "Alerta clínica", "description": "Secreción o ulceración recurrente es una señal de alarma que amerita valoración prioritaria. Puede indicar infección, reacción inflamatoria severa o compromiso tisular que requiere manejo especializado." } }] }, { "pregunta": "¿Ha presentado fatiga intensa que no mejora con el descanso?", "opciones": ["No", "A veces", "Frecuente", "Siempre"], "type": "multiple_choice", "index": 8, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Energía conservada", "description": "No reportar fatiga intensa es positivo. Si aparecen otros síntomas sistémicos, conviene valorarlos en conjunto para orientar el riesgo." } }, { "text": "A veces", "score_value": 3, "recommendation": { "title": "Fatiga ocasional", "description": "La fatiga ocasional puede tener múltiples causas. Si se acompaña de dolor muscular, articular o trastornos del sueño, puede ser útil una valoración médica integral." } }, { "text": "Frecuente", "score_value": 6, "recommendation": { "title": "Fatiga frecuente", "description": "La fatiga frecuente puede ser compatible con inflamación sistémica o trastornos asociados. Una evaluación puede orientar estudios y descartar otras causas." } }, { "text": "Siempre", "score_value": 8, "recommendation": { "title": "Fatiga marcada", "description": "Fatiga constante que no mejora con descanso es una señal importante. Se recomienda valoración médica para identificar causas inflamatorias, autoinmunes u otras condiciones tratables." } }] }, { "pregunta": "¿Siente dolor muscular generalizado?", "opciones": ["No", "Leve", "Moderado", "Severo"], "type": "multiple_choice", "index": 9, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin mialgias", "description": "No presentar dolor muscular generalizado reduce el componente sistémico. Mantén vigilancia si aparecen otros síntomas como fatiga, fiebre o dolor articular." } }, { "text": "Leve", "score_value": 3, "recommendation": { "title": "Mialgias leves", "description": "Dolores musculares leves pueden ser inespecíficos. Si son persistentes y se acompañan de fatiga o dolor articular, conviene valoración médica." } }, { "text": "Moderado", "score_value": 5, "recommendation": { "title": "Mialgias moderadas", "description": "Dolor muscular moderado y sostenido puede ser compatible con un proceso inflamatorio. Un enfoque clínico integral ayuda a orientar el diagnóstico diferencial." } }, { "text": "Severo", "score_value": 7, "recommendation": { "title": "Mialgias severas", "description": "Dolor muscular severo limita la funcionalidad y amerita evaluación. Es importante descartar causas inflamatorias y autoinmunes, especialmente si hay otros síntomas sistémicos." } }] }, { "pregunta": "¿Tiene dolor articular frecuente?", "opciones": ["No", "Ocasional", "Frecuente", "Diario"], "type": "multiple_choice", "index": 10, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin artralgias", "description": "La ausencia de dolor articular es favorable. Si aparece rigidez matutina, hinchazón o dolor persistente, conviene valorarlo a tiempo." } }, { "text": "Ocasional", "score_value": 3, "recommendation": { "title": "Artralgias ocasionales", "description": "El dolor articular ocasional puede tener múltiples causas. Si aumenta o se hace recurrente junto a fatiga, conviene evaluación clínica." } }, { "text": "Frecuente", "score_value": 6, "recommendation": { "title": "Artralgias frecuentes", "description": "Dolor articular frecuente puede sugerir inflamación sistémica. Un especialista puede orientar estudios y evaluar signos de enfermedad inflamatoria." } }, { "text": "Diario", "score_value": 8, "recommendation": { "title": "Artralgias diarias", "description": "Dolor articular diario afecta calidad de vida y requiere valoración médica. Es importante descartar procesos autoinmunes o inflamatorios y plantear manejo oportuno." } }] }, { "pregunta": "¿Ha experimentado caída de cabello inusual desde la aplicación?", "opciones": ["No", "Leve", "Moderada", "Abundante"], "type": "multiple_choice", "index": 11, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin caída notable", "description": "No reportar caída de cabello reduce un signo sistémico frecuente. Si aparecen otros síntomas generales, conviene valorarlos en conjunto." } }, { "text": "Leve", "score_value": 2, "recommendation": { "title": "Caída leve", "description": "La caída leve puede asociarse a estrés, cambios hormonales u otras causas. Si se acompaña de fatiga, dolor articular o problemas de piel, conviene evaluación." } }, { "text": "Moderada", "score_value": 4, "recommendation": { "title": "Caída moderada", "description": "Caída moderada y persistente puede ser un signo sistémico. Es recomendable valoración para descartar deficiencias y procesos inflamatorios." } }, { "text": "Abundante", "score_value": 6, "recommendation": { "title": "Caída abundante", "description": "Caída abundante es una señal importante, especialmente si coincide con fatiga y dolores. Se recomienda evaluación médica integral para orientar causas tratables." } }] }, { "pregunta": "¿Ha notado problemas de memoria o concentración desde la aplicación?", "opciones": ["No", "Leve", "Moderado", "Severo"], "type": "multiple_choice", "index": 12, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Cognición preservada", "description": "No reportar alteraciones cognitivas es favorable. Si aparecen fatiga intensa, dolor o trastornos del sueño, pueden influir en la concentración; conviene valorarlos." } }, { "text": "Leve", "score_value": 2, "recommendation": { "title": "Dificultades leves", "description": "Problemas leves de memoria o concentración pueden asociarse a fatiga, estrés o sueño. Si persisten o empeoran, conviene evaluación para descartar causas tratables." } }, { "text": "Moderado", "score_value": 4, "recommendation": { "title": "Dificultades moderadas", "description": "Alteraciones moderadas de memoria o concentración pueden ser parte de un cuadro sistémico. Una valoración médica ayuda a orientar estudios y manejo." } }, { "text": "Severo", "score_value": 6, "recommendation": { "title": "Dificultades severas", "description": "Problemas severos de memoria o concentración afectan la vida diaria y requieren evaluación. Es importante descartar causas inflamatorias, metabólicas o neurológicas." } }] }, { "pregunta": "¿Tiene trastornos del sueño desde la aplicación?", "opciones": ["No", "Ocasionales", "Frecuentes", "Severos"], "type": "multiple_choice", "index": 13, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sueño adecuado", "description": "Dormir bien favorece la recuperación y reduce el impacto del estrés. Si aparecen otros síntomas sistémicos, mantén hábitos de sueño saludables." } }, { "text": "Ocasionales", "score_value": 2, "recommendation": { "title": "Trastornos ocasionales", "description": "Alteraciones ocasionales del sueño pueden deberse a dolor, ansiedad o estrés. Si se hacen frecuentes o se acompañan de fatiga marcada, conviene valoración." } }, { "text": "Frecuentes", "score_value": 4, "recommendation": { "title": "Trastornos frecuentes", "description": "Problemas frecuentes de sueño pueden agravar fatiga y dolor. Una evaluación integral puede orientar medidas de higiene del sueño y descartar causas médicas." } }, { "text": "Severos", "score_value": 6, "recommendation": { "title": "Trastornos severos", "description": "Trastornos severos del sueño afectan la calidad de vida y la recuperación. Se recomienda valoración médica para identificar causas y plantear tratamiento." } }] }, { "pregunta": "¿Ha tenido fiebre recurrente sin causa aparente desde la aplicación?", "opciones": ["No", "Una vez", "Varias veces"], "type": "multiple_choice", "index": 14, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin fiebre recurrente", "description": "No presentar fiebre recurrente es favorable. Si en el futuro aparece fiebre sin causa clara, conviene consultar para descartar infección o reacción inflamatoria." } }, { "text": "Una vez", "score_value": 4, "recommendation": { "title": "Un episodio de fiebre", "description": "Un episodio aislado de fiebre puede tener múltiples causas. Si se repite o se acompaña de otros síntomas sistémicos, es importante valoración médica." } }, { "text": "Varias veces", "score_value": 8, "recommendation": { "title": "Fiebre recurrente", "description": "Fiebre recurrente sin causa aparente es una señal de alarma. Se recomienda valoración médica urgente para descartar infección, reacción al material o proceso inflamatorio sistémico." } }] }, { "pregunta": "¿Le han diagnosticado alguna enfermedad autoinmune después de la aplicación?", "opciones": ["No", "En estudio", "Sí"], "type": "multiple_choice", "index": 15, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin diagnóstico autoinmune", "description": "No tener diagnóstico autoinmune posterior es favorable. Si hay síntomas sugestivos (fatiga, dolor articular, alteraciones cutáneas), conviene valoración para descartar o confirmar." } }, { "text": "En estudio", "score_value": 6, "recommendation": { "title": "Estudio en curso", "description": "Si hay sospecha de enfermedad autoinmune en estudio, es importante completar la evaluación y seguir las indicaciones del especialista. La asociación con biopolímeros debe ser valorada por el médico." } }, { "text": "Sí", "score_value": 10, "recommendation": { "title": "Diagnóstico autoinmune", "description": "Un diagnóstico autoinmune posterior a la aplicación requiere manejo especializado. Se recomienda seguimiento con reumatología o el especialista indicado y valorar con el médico la relación con el material aplicado." } }] }, { "pregunta": "¿Los síntomas han empeorado con el tiempo?", "opciones": ["No", "Leve", "Claro empeoramiento"], "type": "multiple_choice", "index": 16, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin progresión", "description": "La ausencia de empeoramiento es un signo favorable. Aun así, es útil mantener seguimiento si hubo aplicación de sustancia desconocida." } }, { "text": "Leve", "score_value": 4, "recommendation": { "title": "Progresión leve", "description": "Un empeoramiento leve sugiere evolución del proceso local o sistémico. Una valoración puede ayudar a detener la progresión y aliviar síntomas." } }, { "text": "Claro empeoramiento", "score_value": 8, "recommendation": { "title": "Progresión evidente", "description": "Empeoramiento claro es una señal importante que amerita evaluación prioritaria. Identificar la causa y la extensión ayuda a definir manejo y reducir complicaciones." } }] }, { "pregunta": "¿Ha necesitado hospitalización por complicaciones relacionadas con esta situación?", "opciones": ["No", "Una vez", "Más de una vez"], "type": "multiple_choice", "index": 17, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin hospitalizaciones", "description": "No haber requerido hospitalización es favorable. Sin embargo, si existen señales de alarma, una valoración especializada sigue siendo recomendable." } }, { "text": "Una vez", "score_value": 6, "recommendation": { "title": "Complicación significativa", "description": "Una hospitalización sugiere un evento clínico relevante. Es importante revisar causas, tratamientos previos y evolución para decidir el siguiente paso." } }, { "text": "Más de una vez", "score_value": 10, "recommendation": { "title": "Alta prioridad", "description": "Hospitalizaciones repetidas indican alta complejidad clínica. Se recomienda evaluación prioritaria con equipo especializado para plan diagnóstico y terapéutico integral." } }] }, { "pregunta": "¿Le han recomendado cirugía o extracción del material?", "opciones": ["No", "Recomendada pero no realizada", "Ya realizada"], "type": "multiple_choice", "index": 18, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin recomendación quirúrgica", "description": "No tener recomendación quirúrgica puede indicar un cuadro menos evidente o no valorado aún. Si hay síntomas persistentes, conviene una evaluación específica." } }, { "text": "Recomendada pero no realizada", "score_value": 6, "recommendation": { "title": "Valoración quirúrgica pendiente", "description": "Si ya se recomendó cirugía, es importante entender el motivo y el plan. Una segunda opinión especializada puede aclarar riesgos, beneficios y expectativas realistas." } }, { "text": "Ya realizada", "score_value": 4, "recommendation": { "title": "Seguimiento post-tratamiento", "description": "Tras una intervención, es clave el seguimiento clínico para evaluar mejoría y detectar síntomas persistentes. Si continúas con molestias, conviene reevaluación integral." } }] }, { "pregunta": "¿Ha presentado migración del material a otras zonas del cuerpo?", "opciones": ["No", "Sospecha", "Confirmado por médico"], "type": "multiple_choice", "index": 19, "opciones_completas": [{ "text": "No", "score_value": 0, "recommendation": { "title": "Sin migración aparente", "description": "No notar migración es positivo. Si hay nódulos, dolor o cambios en otras zonas, conviene valoración para descartar migración no evidente." } }, { "text": "Sospecha", "score_value": 5, "recommendation": { "title": "Posible migración", "description": "La migración puede manifestarse con bultos, dolor o cambios de forma en zonas cercanas o distantes. Una valoración clínica e imágenes pueden confirmar o descartar." } }, { "text": "Confirmado por médico", "score_value": 10, "recommendation": { "title": "Señal de alta complejidad", "description": "La migración confirmada sugiere compromiso extendido. Se recomienda evaluación especializada para definir severidad, riesgos y opciones de manejo." } }] }, { "pregunta": "En una escala del 1 al 10, ¿qué tanto ha afectado esto tu calidad de vida? (1 = mínimo, 10 = severo)", "opciones": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], "type": "scale_1_10", "index": 20, "opciones_completas": [{ "text": "1", "score_value": 0.1, "recommendation": { "title": "Impacto mínimo", "description": "Si el impacto es mínimo, puede ser buen momento para una valoración preventiva y educación sobre señales de alarma. Así se detectan cambios a tiempo y se planifica seguimiento." } }, { "text": "2", "score_value": 0.2, "recommendation": { "title": "Impacto bajo", "description": "Un impacto bajo sugiere síntomas controlables, pero conviene vigilar evolución. Considera una consulta si aparecen nuevos síntomas o si los actuales aumentan." } }, { "text": "3", "score_value": 0.3, "recommendation": { "title": "Impacto leve", "description": "Un impacto leve puede relacionarse con molestias intermitentes. Un plan de evaluación puede ayudarte a entender causas y prevenir progresión." } }, { "text": "4", "score_value": 0.4, "recommendation": { "title": "Impacto leve-moderado", "description": "Cuando el impacto comienza a sentirse en actividades diarias, vale la pena una valoración más completa. El objetivo es identificar factores tratables y mejorar bienestar." } }, { "text": "5", "score_value": 0.5, "recommendation": { "title": "Impacto moderado", "description": "Impacto moderado sugiere necesidad de un plan de manejo. Una consulta especializada puede orientar estudios, opciones terapéuticas y seguimiento adecuado." } }, { "text": "6", "score_value": 0.6, "recommendation": { "title": "Impacto moderado-alto", "description": "Si el impacto es moderado-alto, suele existir una carga física o emocional significativa. Es recomendable valoración para definir prioridades de atención y tratamiento." } }, { "text": "7", "score_value": 0.7, "recommendation": { "title": "Impacto alto", "description": "Un impacto alto indica afectación clara de la vida diaria. Una evaluación integral puede ayudar a identificar complicaciones y construir un plan de manejo realista." } }, { "text": "8", "score_value": 0.8, "recommendation": { "title": "Impacto muy alto", "description": "Impacto muy alto sugiere necesidad de atención prioritaria. Es importante valorar tanto síntomas locales como sistémicos para tomar decisiones informadas." } }, { "text": "9", "score_value": 0.9, "recommendation": { "title": "Impacto severo", "description": "Impacto severo suele acompañarse de síntomas persistentes y limitantes. Se recomienda evaluación prioritaria con especialistas para definir el abordaje más seguro." } }, { "text": "10", "score_value": 1, "recommendation": { "title": "Impacto crítico", "description": "Si el impacto es crítico, es importante buscar valoración médica prioritaria. Un equipo especializado puede orientar el diagnóstico, aliviar síntomas y reducir riesgos de complicaciones." } }] }];
-    const totalSteps = 25;
-    const stepMeta = [{ "type": "cover" }, { "type": "question", "questionIndex": 0 }, { "type": "question", "questionIndex": 1 }, { "type": "question", "questionIndex": 2 }, { "type": "question", "questionIndex": 3 }, { "type": "info" }, { "type": "question", "questionIndex": 4 }, { "type": "question", "questionIndex": 5 }, { "type": "question", "questionIndex": 6 }, { "type": "question", "questionIndex": 7 }, { "type": "info" }, { "type": "question", "questionIndex": 8 }, { "type": "question", "questionIndex": 9 }, { "type": "question", "questionIndex": 10 }, { "type": "question", "questionIndex": 11 }, { "type": "info" }, { "type": "question", "questionIndex": 12 }, { "type": "question", "questionIndex": 13 }, { "type": "question", "questionIndex": 14 }, { "type": "question", "questionIndex": 15 }, { "type": "info" }, { "type": "question", "questionIndex": 16 }, { "type": "question", "questionIndex": 17 }, { "type": "question", "questionIndex": 18 }, { "type": "question", "questionIndex": 19 }];
+    const totalSteps = 26;
+    const stepMeta = [{ "type": "cover" }, { "type": "question", "questionIndex": 0 }, { "type": "question", "questionIndex": 1 }, { "type": "question", "questionIndex": 2 }, { "type": "question", "questionIndex": 3 }, { "type": "info" }, { "type": "question", "questionIndex": 4 }, { "type": "question", "questionIndex": 5 }, { "type": "question", "questionIndex": 6 }, { "type": "question", "questionIndex": 7 }, { "type": "info" }, { "type": "question", "questionIndex": 8 }, { "type": "question", "questionIndex": 9 }, { "type": "question", "questionIndex": 10 }, { "type": "question", "questionIndex": 11 }, { "type": "info" }, { "type": "question", "questionIndex": 12 }, { "type": "question", "questionIndex": 13 }, { "type": "question", "questionIndex": 14 }, { "type": "question", "questionIndex": 15 }, { "type": "info" }, { "type": "question", "questionIndex": 16 }, { "type": "question", "questionIndex": 17 }, { "type": "question", "questionIndex": 18 }, { "type": "question", "questionIndex": 19 }, { "type": "analysis" }];
     const resultPageUrl = "results/index.html";
     let currentStep = 0;
     const progressTotalSteps = stepMeta.filter(s => s && s.type !== 'cover').length || totalSteps;
@@ -1348,6 +1633,12 @@
         if (progressTextEl) progressTextEl.style.display = 'none';
         if (progressBarContainerEl) progressBarContainerEl.style.display = 'none';
         if (progressBarEl) progressBarEl.style.width = '0%';
+        return;
+      }
+
+      if (meta && meta.type === 'analysis') {
+        if (progressTextEl) progressTextEl.style.display = 'none';
+        if (progressBarContainerEl) progressBarContainerEl.style.display = 'none';
         return;
       }
 
@@ -1385,11 +1676,16 @@
 
       const meta = stepMeta[step];
       const isCover = meta && meta.type === 'cover';
+      const isAnalysis = meta && meta.type === 'analysis';
       var buttonContainer = document.getElementById('buttonContainer');
       // Ocultamos los botones de navegación manual según la petición del usuario
       if (buttonContainer) buttonContainer.style.display = 'none';
       const nextBtnEl = document.getElementById('btnNext');
       if (nextBtnEl) nextBtnEl.style.display = 'none';
+
+      if (isAnalysis) {
+        initAnalysis();
+      }
 
       updateProgress();
     }
@@ -1539,8 +1835,13 @@
           document.activeElement.blur();
         }
         if (currentStep < totalSteps - 1) {
-          currentStep++;
-          showStep(currentStep);
+          const nextMeta = stepMeta[currentStep + 1];
+          if (nextMeta && nextMeta.type === 'analysis') {
+            submitForm();
+          } else {
+            currentStep++;
+            showStep(currentStep);
+          }
         } else {
           submitForm();
         }
@@ -1586,15 +1887,84 @@
       // Preparar datos para envío HTTP (función lista pero no ejecutada)
       const httpData = JSON.stringify(formData);
       console.log('Datos preparados para envío HTTP:', httpData);
-      // Para enviar: fetch(resultPageUrl, { method: 'POST', body: httpData, headers: {'Content-Type': 'application/json'} })
 
-      // Redirigir a página de resultados
-      if (resultPageUrl && resultPageUrl !== '#') {
-        // Opción 1: Redirigir con datos en localStorage (ya guardado arriba)
-        window.location.href = resultPageUrl;
+      // En lugar de redirigir inmediatamente, avanzamos al paso de análisis si existe
+      const analysisStepIndex = stepMeta.findIndex(s => s.type === 'analysis');
+      if (analysisStepIndex !== -1) {
+        currentStep = analysisStepIndex;
+        showStep(currentStep);
       } else {
-        alert('Formulario completado. Respuestas guardadas.\n\n' + JSON.stringify(formData, null, 2));
+        // Fallback si no hay paso de análisis
+        if (resultPageUrl && resultPageUrl !== '#') {
+          window.location.href = resultPageUrl;
+        }
       }
+    }
+
+    // Lógica para la pantalla de Análisis (Vertical Stepper + Progress Bar + Varied Timing)
+    function initAnalysis() {
+      const items = [
+        document.getElementById('stepper-0'),
+        document.getElementById('stepper-1'),
+        document.getElementById('stepper-2'),
+        document.getElementById('stepper-3'),
+        document.getElementById('stepper-4')
+      ];
+      const globalProgressBar = document.getElementById('analysisGlobalProgressBar');
+
+      // Tiempos variables para cada paso (en milisegundos)
+      const stepDurations = [1500, 2800, 4500, 3200, 1800];
+      const totalDuration = stepDurations.reduce((a, b) => a + b, 0);
+
+      let currentIndex = 0;
+
+      // Animación de la barra global
+      const startTime = Date.now();
+      const progressInterval = setInterval(() => {
+        const now = Date.now();
+        const currentElapsed = now - startTime;
+        const progress = Math.min((currentElapsed / totalDuration) * 100, 100);
+
+        if (globalProgressBar) {
+          globalProgressBar.style.width = progress + '%';
+        }
+
+        if (currentElapsed >= totalDuration) {
+          clearInterval(progressInterval);
+        }
+      }, 50);
+
+      function processNextStep() {
+        if (currentIndex < items.length) {
+          const currentItem = items[currentIndex];
+          const currentDuration = stepDurations[currentIndex];
+
+          // Activar el actual
+          currentItem.classList.add('active');
+
+          // Esperar el tiempo específico del paso y completar
+          setTimeout(() => {
+            currentItem.classList.remove('active');
+            currentItem.classList.add('completed');
+
+            currentIndex++;
+
+            if (currentIndex < items.length) {
+              processNextStep();
+            } else {
+              // Fin de todos los pasos, redirección final
+              setTimeout(() => {
+                if (resultPageUrl && resultPageUrl !== '#') {
+                  window.location.href = resultPageUrl;
+                }
+              }, 800);
+            }
+          }, currentDuration);
+        }
+      }
+
+      // Iniciar el proceso secuencial
+      processNextStep();
     }
 
     // Event listeners

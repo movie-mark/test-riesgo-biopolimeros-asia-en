@@ -273,14 +273,155 @@
     box-shadow: none;
   }
   
-  .recommendations-section,
-  .cta-section {
+  .recommendations-section {
     background: var(--results-card);
     border: 1px solid var(--results-border);
     padding: var(--results-spacing-2xl);
     border-radius: var(--results-radius);
     box-shadow: var(--results-shadow);
     margin-bottom: var(--results-spacing-xl);
+  }
+
+  /* ─── CTA Section ─────────────────────────── */
+  .cta-section {
+    --cta-glow-color: rgba(37, 211, 102, 0.1);
+    --cta-border-color: rgba(37, 211, 102, 0.2);
+    --cta-shadow-glow: rgba(37, 211, 102, 0.07);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #071a14 0%, #0c1a2e 100%);
+    border: 1px solid var(--cta-border-color);
+    padding: var(--results-spacing-2xl);
+    border-radius: var(--results-radius);
+    box-shadow: 0 0 48px var(--cta-shadow-glow), var(--results-shadow-lg);
+    margin-bottom: var(--results-spacing-xl);
+    text-align: center;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--cta-glow-color) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .cta-urgency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(37, 211, 102, 0.1);
+    border: 1px solid rgba(37, 211, 102, 0.28);
+    color: #4ade80;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: var(--results-spacing-lg);
+  }
+
+  .cta-live-dot {
+    width: 7px;
+    height: 7px;
+    background: #4ade80;
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: cta-pulse 1.6s ease-in-out infinite;
+  }
+
+  @keyframes cta-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.75); }
+  }
+
+  .cta-main-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin-bottom: var(--results-spacing-md);
+  }
+
+  .cta-subtitle {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.65;
+    max-width: 460px;
+    margin: 0 auto var(--results-spacing-xl);
+  }
+
+  .cta-trust-row {
+    display: flex;
+    justify-content: center;
+    gap: var(--results-spacing-lg);
+    flex-wrap: wrap;
+    margin-bottom: var(--results-spacing-xl);
+  }
+
+  .cta-trust-item {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 500;
+  }
+
+  .cta-button-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 420px;
+    min-height: 68px;
+    padding: 16px 24px;
+    background: var(--cta-bg, #25D366);
+    color: var(--cta-text, #000);
+    border: none;
+    border-radius: 16px;
+    font-family: var(--results-font-family);
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                filter 0.2s;
+    box-shadow: 0 8px 28px var(--cta-shadow, rgba(37, 211, 102, 0.35));
+  }
+
+  .cta-button-hero:hover {
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px var(--cta-shadow, rgba(37, 211, 102, 0.45));
+  }
+
+  .cta-button-hero:active {
+    transform: translateY(0);
+    filter: brightness(0.96);
+  }
+
+  .cta-btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    line-height: 1.3;
+  }
+
+  .cta-btn-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: inherit;
+  }
+
+  .cta-btn-sub {
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0.65;
+    color: inherit;
   }
   
   .section-title {
@@ -332,14 +473,14 @@
     gap: var(--results-spacing-md);
     align-items: center;
   }
-  
+
   .cta-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 48px;
+    min-height: 44px;
     padding: 0 var(--results-spacing-xl);
-    border: 1px solid transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--results-radius-button);
     font-size: 0.875rem;
     font-family: var(--results-font-family);
@@ -350,35 +491,13 @@
     min-width: 200px;
     white-space: nowrap;
     touch-action: manipulation;
-    background: #ffffff;
-    color: #111111;
-    border-color: #ffffff;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.55);
   }
-  
-  .cta-button.primary {
-    background: #ffffff;
-    color: #111111;
-    border: 1px solid #ffffff;
-    box-shadow: var(--results-shadow-sm);
-  }
-  
-  .cta-button.primary:hover {
-    background: #f3f4f6;
-    border-color: #f3f4f6;
-    color: #111111;
-    box-shadow: var(--results-shadow);
-  }
-  
-  .cta-button.secondary {
-    background: #ffffff;
-    color: #111111;
-    border: 1px solid #ffffff;
-  }
-  
-  .cta-button.secondary:hover {
-    background: #f3f4f6;
-    color: #111111;
-    border-color: #f3f4f6;
+
+  .cta-button:hover {
+    color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 
   .final-contact-section {
@@ -406,6 +525,19 @@
     .recommendations-section,
     .cta-section {
       padding: var(--results-spacing-lg);
+    }
+
+    .cta-main-title {
+      font-size: 1.4rem;
+    }
+
+    .cta-trust-row {
+      gap: var(--results-spacing-md);
+    }
+
+    .cta-button-hero {
+      max-width: 100%;
+      min-height: 64px;
     }
 
     .section-title {
@@ -466,7 +598,17 @@
     
     <!-- Sección de CTAs -->
     <div class="cta-section" id="ctaSection">
-      <h2 class="section-title">Agenda tu valoración ahora</h2>
+      <div class="cta-urgency-badge">
+        <span class="cta-live-dot"></span>
+        Especialistas disponibles ahora
+      </div>
+      <h2 class="cta-main-title">Habla con un asesor especializado</h2>
+      <p class="cta-subtitle">Nuestros asesores pueden darte más información sobre una valoración preventiva y resolver tus dudas sin ningún compromiso.</p>
+      <div class="cta-trust-row">
+        <span class="cta-trust-item">✓ Presencial o Virtual</span>
+        <span class="cta-trust-item">✓ Clínica especializada</span>
+        <span class="cta-trust-item">✓ 100% Confidencial</span>
+      </div>
       <div class="cta-list" id="ctaList"></div>
     </div>
 
@@ -477,8 +619,19 @@
     </div>
 
     <!-- CTA final -->
-    <div class="final-contact-section" id="finalContactSection">
-      <a href="#" class="cta-button primary" id="finalContactButton">Ponte en contacto con un agente especializado</a>
+    <div class="cta-section" id="finalCtaSection">
+      <div class="cta-urgency-badge" id="finalCtaBadge">
+        <span class="cta-live-dot"></span>
+        Especialistas disponibles ahora
+      </div>
+      <h2 class="cta-main-title" id="finalCtaTitle">Habla con un asesor especializado</h2>
+      <p class="cta-subtitle" id="finalCtaSubtitle">Nuestros asesores pueden darte más información sobre una valoración preventiva y resolver tus dudas sin ningún compromiso.</p>
+      <div class="cta-trust-row" id="finalCtaTrustRow">
+        <span class="cta-trust-item">✓ Presencial o Virtual</span>
+        <span class="cta-trust-item">✓ Clínica especializada</span>
+        <span class="cta-trust-item">✓ 100% Confidencial</span>
+      </div>
+      <div class="cta-list" id="finalCtaList"></div>
     </div>
   </div>
   
@@ -1115,9 +1268,83 @@
     function renderCTAs(score, respuestas) {
       const ctaList = document.getElementById('ctaList');
       if (!ctaList) return;
+
+      // Adaptar contenido y estilo de la sección según el nivel de riesgo
+      const ctaSectionEl = document.getElementById('ctaSection');
+      const ctaBadgeEl = ctaSectionEl ? ctaSectionEl.querySelector('.cta-urgency-badge') : null;
+      const ctaTitleEl = ctaSectionEl ? ctaSectionEl.querySelector('.cta-main-title') : null;
+      const ctaSubtitleEl = ctaSectionEl ? ctaSectionEl.querySelector('.cta-subtitle') : null;
+      const ctaTrustRowEl = ctaSectionEl ? ctaSectionEl.querySelector('.cta-trust-row') : null;
+
+      const ctaContent = score <= 30 ? {
+        badgeText: 'Evaluación preventiva recomendada',
+        badgeBg: 'rgba(15,118,110,0.12)',
+        badgeBorder: 'rgba(15,118,110,0.3)',
+        badgeColor: '#34d399',
+        dotColor: '#34d399',
+        glowColor: 'rgba(15,118,110,0.1)',
+        borderColor: 'rgba(15,118,110,0.2)',
+        shadowGlow: 'rgba(15,118,110,0.07)',
+        title: 'Habla con un asesor especializado',
+        subtitle: 'Nuestros asesores pueden darte más información sobre una valoración preventiva y resolver tus dudas sin ningún compromiso.',
+        trust: ['✓ Presencial o Virtual', '✓ Clínica especializada', '✓ 100% Confidencial']
+      } : score <= 60 ? {
+        badgeText: 'Atención médica recomendada',
+        badgeBg: 'rgba(217,119,6,0.12)',
+        badgeBorder: 'rgba(217,119,6,0.3)',
+        badgeColor: '#fbbf24',
+        dotColor: '#fbbf24',
+        glowColor: 'rgba(217,119,6,0.1)',
+        borderColor: 'rgba(217,119,6,0.2)',
+        shadowGlow: 'rgba(217,119,6,0.07)',
+        title: 'Habla con un asesor especializado',
+        subtitle: 'Un asesor puede explicarte qué implica una valoración y orientarte sobre los pasos más adecuados para tu caso.',
+        trust: ['✓ Presencial o Virtual', '✓ Clínica especializada', '✓ 100% Confidencial']
+      } : {
+        badgeText: '⚠ Atención prioritaria',
+        badgeBg: 'rgba(239,68,68,0.12)',
+        badgeBorder: 'rgba(239,68,68,0.3)',
+        badgeColor: '#f87171',
+        dotColor: '#f87171',
+        glowColor: 'rgba(239,68,68,0.1)',
+        borderColor: 'rgba(239,68,68,0.25)',
+        shadowGlow: 'rgba(239,68,68,0.08)',
+        title: 'Habla con un asesor especializado',
+        subtitle: 'Ante las señales que muestran tus respuestas, un asesor puede orientarte de inmediato sobre los pasos a seguir.',
+        trust: ['✓ Presencial o Virtual', '✓ Clínica especializada', '✓ 100% Confidencial']
+      };
+
+      function applyCtaContent(sectionEl, badgeEl, titleEl, subtitleEl, trustRowEl) {
+        if (sectionEl) {
+          sectionEl.style.setProperty('--cta-glow-color', ctaContent.glowColor);
+          sectionEl.style.setProperty('--cta-border-color', ctaContent.borderColor);
+          sectionEl.style.setProperty('--cta-shadow-glow', ctaContent.shadowGlow);
+        }
+        if (badgeEl) {
+          badgeEl.innerHTML = `<span class="cta-live-dot" style="background:${ctaContent.dotColor}"></span> ${ctaContent.badgeText}`;
+          badgeEl.style.background = ctaContent.badgeBg;
+          badgeEl.style.borderColor = ctaContent.badgeBorder;
+          badgeEl.style.color = ctaContent.badgeColor;
+        }
+        if (titleEl) titleEl.textContent = ctaContent.title;
+        if (subtitleEl) subtitleEl.textContent = ctaContent.subtitle;
+        if (trustRowEl) trustRowEl.innerHTML = ctaContent.trust.map(t => `<span class="cta-trust-item">${t}</span>`).join('');
+      }
+
+      // Aplicar en la sección CTA principal
+      applyCtaContent(ctaSectionEl, ctaBadgeEl, ctaTitleEl, ctaSubtitleEl, ctaTrustRowEl);
+
+      // Aplicar en la sección CTA final
+      applyCtaContent(
+        document.getElementById('finalCtaSection'),
+        document.getElementById('finalCtaBadge'),
+        document.getElementById('finalCtaTitle'),
+        document.getElementById('finalCtaSubtitle'),
+        document.getElementById('finalCtaTrustRow')
+      );
       
       // Obtener plantillas del config
-      const ctaTemplates = [{"trigger_conditions": [{"score_range": [0, 30]}], "text": "Agendar valoración preventiva", "url": "/agenda/valoracion-preventiva", "style": "primary", "priority": 1, "style_obj": {"variant": "primary", "background_color": "#0F766E", "text_color": "#FFFFFF", "border_radius": "14px"}}, {"trigger_conditions": [{"score_range": [31, 60]}], "text": "Solicitar valoración especializada", "url": "https://wa.me/573103314120", "style": "primary", "priority": 1, "style_obj": {"variant": "primary", "background_color": "#1D4ED8", "text_color": "#FFFFFF", "border_radius": "14px"}}, {"trigger_conditions": [{"score_range": [61, 100]}], "text": "Agendar evaluación prioritaria", "url": "/agenda/prioritaria", "style": "accent", "priority": 1, "style_obj": {"variant": "accent", "background_color": "#F97316", "text_color": "#0F172A", "border_radius": "14px"}}];
+      const ctaTemplates = [{"trigger_conditions": [{"score_range": [0, 30]}], "text": "Hablar con un asesor especializado", "url": "https://wa.me/573103314120", "style": "primary", "priority": 1, "style_obj": {"variant": "primary", "background_color": "#0F766E", "text_color": "#FFFFFF", "border_radius": "14px"}}, {"trigger_conditions": [{"score_range": [31, 60]}], "text": "Hablar con un asesor especializado", "url": "https://wa.me/573103314120", "style": "primary", "priority": 1, "style_obj": {"variant": "primary", "background_color": "#1D4ED8", "text_color": "#FFFFFF", "border_radius": "14px"}}, {"trigger_conditions": [{"score_range": [61, 100]}], "text": "Hablar con un asesor especializado", "url": "https://wa.me/573103314120", "style": "accent", "priority": 1, "style_obj": {"variant": "accent", "background_color": "#F97316", "text_color": "#0F172A", "border_radius": "14px"}}];
       
       // Normalizar trigger_conditions: puede ser objeto o array
       const normalizedCTAs = ctaTemplates.map(cta => {
@@ -1159,35 +1386,30 @@
       // Renderizar CTAs
       if (toShow.length > 0) {
         ctaList.innerHTML = toShow.map(cta => {
-          // Manejar style como objeto o string
-          let styleClass = '';
-          let inlineStyle = '';
-          
-          if (cta.style_obj && typeof cta.style_obj === 'object') {
-            // Forzar estilo unificado del CTA para mayor contraste en mobile ads
-            inlineStyle = 'style="background-color: #ffffff; color: #111111; border-color: #ffffff;"';
-            styleClass = '';
-          } else {
-            // Estructura simple: usar clases CSS
-            const styleStr = cta.style || 'primary';
-            styleClass = styleStr === 'secondary' ? 'secondary' : (styleStr === 'accent' ? 'accent' : '');
-          }
-          
-          return `<a href="${cta.url || '#'}" class="cta-button ${styleClass}" ${inlineStyle}>${cta.text}</a>`;
+          const isWhatsApp = cta.url && (cta.url.includes('wa.me/') || cta.url.includes('api.whatsapp.com'));
+          const bgColor = isWhatsApp ? '#25D366' : (cta.style_obj && cta.style_obj.background_color ? cta.style_obj.background_color : '#ffffff');
+          const textColor = isWhatsApp ? '#000000' : (cta.style_obj && cta.style_obj.text_color ? cta.style_obj.text_color : '#111111');
+          const shadowColor = isWhatsApp
+            ? 'rgba(37,211,102,0.38)'
+            : bgColor === '#F97316' ? 'rgba(249,115,22,0.38)'
+            : bgColor === '#0F766E' ? 'rgba(15,118,110,0.38)'
+            : 'rgba(0,0,0,0.28)';
+          const icon = isWhatsApp
+            ? `<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`
+            : `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`;
+          const subText = isWhatsApp ? 'por WhatsApp · Sin compromiso' : 'Más información · Sin compromiso';
+          const target = isWhatsApp ? 'target="_blank" rel="noopener"' : '';
+          return `<a href="${cta.url || '#'}" class="cta-button-hero" style="--cta-bg:${bgColor};--cta-text:${textColor};--cta-shadow:${shadowColor}" ${target}>${icon}<span class="cta-btn-text"><span class="cta-btn-label">${cta.text}</span><span class="cta-btn-sub">${subText}</span></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.55"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>`;
         }).join('');
+
+      // Renderizar el mismo botón en la sección CTA final
+      const finalCtaList = document.getElementById('finalCtaList');
+      if (finalCtaList) finalCtaList.innerHTML = ctaList.innerHTML;
+
       } else {
         ctaList.innerHTML = '<p style="text-align: center; color: var(--form-text-secondary);">No hay acciones recomendadas en este momento.</p>';
-      }
-
-      // CTA final: reutilizar enlace de WhatsApp si existe
-      const finalContactButton = document.getElementById('finalContactButton');
-      if (finalContactButton) {
-        const whatsappCTA = normalizedCTAs.find(t =>
-          typeof t.url === 'string' &&
-          (t.url.includes('wa.me/') || t.url.includes('api.whatsapp.com'))
-        );
-        const fallbackCTA = toShow[0] || normalizedCTAs[0];
-        finalContactButton.href = (whatsappCTA && whatsappCTA.url) || (fallbackCTA && fallbackCTA.url) || '#';
+        const finalCtaList = document.getElementById('finalCtaList');
+        if (finalCtaList) finalCtaList.innerHTML = ctaList.innerHTML;
       }
     }
 
