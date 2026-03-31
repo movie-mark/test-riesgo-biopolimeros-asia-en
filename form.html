@@ -1633,6 +1633,17 @@
     const totalSteps = 26;
     const stepMeta = [{ "type": "cover" }, { "type": "question", "questionIndex": 0 }, { "type": "question", "questionIndex": 1 }, { "type": "question", "questionIndex": 2 }, { "type": "question", "questionIndex": 3 }, { "type": "info" }, { "type": "question", "questionIndex": 4 }, { "type": "question", "questionIndex": 5 }, { "type": "question", "questionIndex": 6 }, { "type": "question", "questionIndex": 7 }, { "type": "info" }, { "type": "question", "questionIndex": 8 }, { "type": "question", "questionIndex": 9 }, { "type": "question", "questionIndex": 10 }, { "type": "question", "questionIndex": 11 }, { "type": "info" }, { "type": "question", "questionIndex": 12 }, { "type": "question", "questionIndex": 13 }, { "type": "question", "questionIndex": 14 }, { "type": "question", "questionIndex": 15 }, { "type": "info" }, { "type": "question", "questionIndex": 16 }, { "type": "question", "questionIndex": 17 }, { "type": "question", "questionIndex": 18 }, { "type": "question", "questionIndex": 19 }, { "type": "analysis" }];
     const resultPageUrl = "results/index.html";
+
+    function getResultPageUrlWithTracking() {
+      try {
+        const currentParams = new URLSearchParams(window.location.search || '');
+        const hasTrackingParams = Array.from(currentParams.keys()).length > 0;
+        if (!hasTrackingParams) return resultPageUrl;
+        return resultPageUrl + '?' + currentParams.toString();
+      } catch (e) {
+        return resultPageUrl;
+      }
+    }
     let currentStep = 0;
     const progressTotalSteps = stepMeta.filter(s => s && s.type !== 'cover').length || totalSteps;
     const respuestas = {
@@ -1915,7 +1926,7 @@
       } else {
         // Fallback si no hay paso de análisis
         if (resultPageUrl && resultPageUrl !== '#') {
-          window.location.href = resultPageUrl;
+          window.location.href = getResultPageUrlWithTracking();
         }
       }
     }
@@ -1974,7 +1985,7 @@
               // Fin de todos los pasos, redirección final
               setTimeout(() => {
                 if (resultPageUrl && resultPageUrl !== '#') {
-                  window.location.href = resultPageUrl;
+                  window.location.href = getResultPageUrlWithTracking();
                 }
               }, 800);
             }
