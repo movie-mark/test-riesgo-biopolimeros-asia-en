@@ -37,7 +37,7 @@
           }
         },
         {
-          "texto": "No estoy muy seguro/a",
+          "texto": "I'm not sure",
           "valor_score": 0.6,
           "recomendacion": {
             "title": "Partial suspicion",
@@ -45,7 +45,7 @@
           }
         },
         {
-          "texto": "Sí",
+          "texto": "Yes",
           "valor_score": 1,
           "recomendacion": {
             "title": "Probable exposure",
@@ -61,7 +61,7 @@
       "pregunta": "¿Hace cuánto tiempo le aplicaron la sustancia?",
       "opciones": [
         {
-          "texto": "Menos de 6 meses",
+          "texto": "Less than 6 months",
           "valor_score": 0.2,
           "recomendacion": {
             "title": "Recent period",
@@ -69,7 +69,7 @@
           }
         },
         {
-          "texto": "Entre 6 meses y 2 años",
+          "texto": "Between 6 months and 2 years",
           "valor_score": 0.5,
           "recomendacion": {
             "title": "Risk of progression",
@@ -77,7 +77,7 @@
           }
         },
         {
-          "texto": "Entre 2 y 5 años",
+          "texto": "Between 2 and 5 years",
           "valor_score": 0.7,
           "recomendacion": {
             "title": "Possible late complications",
@@ -85,7 +85,7 @@
           }
         },
         {
-          "texto": "Más de 5 años",
+          "texto": "More than 5 years",
           "valor_score": 1,
           "recomendacion": {
             "title": "Long-term complications",
@@ -93,7 +93,7 @@
           }
         },
         {
-          "texto": "No lo recuerdo con exactitud",
+          "texto": "I don't remember exactly",
           "valor_score": 0.6,
           "recomendacion": {
             "title": "Uncertain date",
@@ -117,7 +117,7 @@
           }
         },
         {
-          "texto": "Ocasional",
+          "texto": "Occasional",
           "valor_score": 3,
           "recomendacion": {
             "title": "Intermittent pain",
@@ -125,7 +125,7 @@
           }
         },
         {
-          "texto": "Frecuente",
+          "texto": "Frequent",
           "valor_score": 6,
           "recomendacion": {
             "title": "Persistent pain",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "texto": "Constante",
+          "texto": "Constant",
           "valor_score": 8,
           "recomendacion": {
             "title": "Constant pain",
@@ -157,7 +157,7 @@
           }
         },
         {
-          "texto": "Leve",
+          "texto": "Mild",
           "valor_score": 3,
           "recomendacion": {
             "title": "Mild inflammation",
@@ -165,7 +165,7 @@
           }
         },
         {
-          "texto": "Moderada",
+          "texto": "Moderate",
           "valor_score": 6,
           "recomendacion": {
             "title": "Moderate inflammation",
@@ -173,7 +173,7 @@
           }
         },
         {
-          "texto": "Severa",
+          "texto": "Severe",
           "valor_score": 8,
           "recomendacion": {
             "title": "Severe inflammation",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "texto": "Pequeños",
+          "texto": "Small",
           "valor_score": 4,
           "recomendacion": {
             "title": "Small nodules",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "texto": "Múltiples/grandes",
+          "texto": "Multiple/large",
           "valor_score": 8,
           "recomendacion": {
             "title": "Multiple/large nodules",
@@ -229,7 +229,7 @@
           }
         },
         {
-          "texto": "Leves",
+          "texto": "Mild",
           "valor_score": 3,
           "recomendacion": {
             "title": "Mild changes",
@@ -237,7 +237,7 @@
           }
         },
         {
-          "texto": "Notorios",
+          "texto": "Noticeable",
           "valor_score": 6,
           "recomendacion": {
             "title": "Noticeable changes",
@@ -261,7 +261,7 @@
           }
         },
         {
-          "texto": "Una vez",
+          "texto": "Once",
           "valor_score": 6,
           "recomendacion": {
             "title": "Isolated episode",
@@ -269,7 +269,7 @@
           }
         },
         {
-          "texto": "Varias veces",
+          "texto": "Several times",
           "valor_score": 10,
           "recomendacion": {
             "title": "Clinical alert",
@@ -293,7 +293,7 @@
           }
         },
         {
-          "texto": "A veces",
+          "texto": "Sometimes",
           "valor_score": 3,
           "recomendacion": {
             "title": "Occasional fatigue",
@@ -301,7 +301,7 @@
           }
         },
         {
-          "texto": "Frecuente",
+          "texto": "Frequent",
           "valor_score": 6,
           "recomendacion": {
             "title": "Frequent fatigue",
@@ -309,7 +309,7 @@
           }
         },
         {
-          "texto": "Siempre",
+          "texto": "Always",
           "valor_score": 8,
           "recomendacion": {
             "title": "Marked fatigue",
@@ -333,7 +333,7 @@
           }
         },
         {
-          "texto": "Leve",
+          "texto": "Mild",
           "valor_score": 3,
           "recomendacion": {
             "title": "Mild myalgias",
@@ -341,7 +341,7 @@
           }
         },
         {
-          "texto": "Moderado",
+          "texto": "Moderate",
           "valor_score": 5,
           "recomendacion": {
             "title": "Moderate myalgias",
@@ -349,7 +349,7 @@
           }
         },
         {
-          "texto": "Severo",
+          "texto": "Severe",
           "valor_score": 7,
           "recomendacion": {
             "title": "Severe myalgias",
@@ -373,7 +373,7 @@
           }
         },
         {
-          "texto": "Ocasional",
+          "texto": "Occasional",
           "valor_score": 3,
           "recomendacion": {
             "title": "Occasional arthralgias",
@@ -381,7 +381,7 @@
           }
         },
         {
-          "texto": "Frecuente",
+          "texto": "Frequent",
           "valor_score": 6,
           "recomendacion": {
             "title": "Frequent arthralgias",
@@ -389,7 +389,7 @@
           }
         },
         {
-          "texto": "Diario",
+          "texto": "Daily",
           "valor_score": 8,
           "recomendacion": {
             "title": "Daily arthralgias",
@@ -413,7 +413,7 @@
           }
         },
         {
-          "texto": "Leve",
+          "texto": "Mild",
           "valor_score": 2,
           "recomendacion": {
             "title": "Mild hair loss",
@@ -421,7 +421,7 @@
           }
         },
         {
-          "texto": "Moderada",
+          "texto": "Moderate",
           "valor_score": 4,
           "recomendacion": {
             "title": "Moderate hair loss",
@@ -429,7 +429,7 @@
           }
         },
         {
-          "texto": "Abundante",
+          "texto": "Abundant",
           "valor_score": 6,
           "recomendacion": {
             "title": "Abundant hair loss",
@@ -453,7 +453,7 @@
           }
         },
         {
-          "texto": "Leve",
+          "texto": "Mild",
           "valor_score": 2,
           "recomendacion": {
             "title": "Mild difficulties",
@@ -461,7 +461,7 @@
           }
         },
         {
-          "texto": "Moderado",
+          "texto": "Moderate",
           "valor_score": 4,
           "recomendacion": {
             "title": "Moderate difficulties",
@@ -469,7 +469,7 @@
           }
         },
         {
-          "texto": "Severo",
+          "texto": "Severe",
           "valor_score": 6,
           "recomendacion": {
             "title": "Severe difficulties",
@@ -493,7 +493,7 @@
           }
         },
         {
-          "texto": "Ocasionales",
+          "texto": "Occasional",
           "valor_score": 2,
           "recomendacion": {
             "title": "Occasional disorders",
@@ -501,7 +501,7 @@
           }
         },
         {
-          "texto": "Frecuentes",
+          "texto": "Frequent",
           "valor_score": 4,
           "recomendacion": {
             "title": "Frequent disorders",
@@ -509,7 +509,7 @@
           }
         },
         {
-          "texto": "Severos",
+          "texto": "Severe",
           "valor_score": 6,
           "recomendacion": {
             "title": "Severe disorders",
@@ -533,7 +533,7 @@
           }
         },
         {
-          "texto": "Una vez",
+          "texto": "Once",
           "valor_score": 4,
           "recomendacion": {
             "title": "An episode of fever",
@@ -541,7 +541,7 @@
           }
         },
         {
-          "texto": "Varias veces",
+          "texto": "Several times",
           "valor_score": 8,
           "recomendacion": {
             "title": "Recurrent fever",
@@ -565,7 +565,7 @@
           }
         },
         {
-          "texto": "En estudio",
+          "texto": "Under study",
           "valor_score": 6,
           "recomendacion": {
             "title": "Study in progress",
@@ -573,7 +573,7 @@
           }
         },
         {
-          "texto": "Sí",
+          "texto": "Yes",
           "valor_score": 10,
           "recomendacion": {
             "title": "Autoimmune diagnosis",
@@ -597,7 +597,7 @@
           }
         },
         {
-          "texto": "Leve",
+          "texto": "Mild",
           "valor_score": 4,
           "recomendacion": {
             "title": "Mild progression",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "texto": "Claro empeoramiento",
+          "texto": "Clear worsening",
           "valor_score": 8,
           "recomendacion": {
             "title": "Evident progression",
@@ -629,7 +629,7 @@
           }
         },
         {
-          "texto": "Una vez",
+          "texto": "Once",
           "valor_score": 6,
           "recomendacion": {
             "title": "Significant complication",
@@ -637,7 +637,7 @@
           }
         },
         {
-          "texto": "Más de una vez",
+          "texto": "More than once",
           "valor_score": 10,
           "recomendacion": {
             "title": "High priority",
@@ -661,7 +661,7 @@
           }
         },
         {
-          "texto": "Recomendada pero no realizada",
+          "texto": "Recommended but not performed",
           "valor_score": 6,
           "recomendacion": {
             "title": "Pending surgical assessment",
@@ -669,7 +669,7 @@
           }
         },
         {
-          "texto": "Ya realizada",
+          "texto": "Already performed",
           "valor_score": 4,
           "recomendacion": {
             "title": "Post-treatment follow-up",
@@ -693,7 +693,7 @@
           }
         },
         {
-          "texto": "Sospecha",
+          "texto": "Suspicion",
           "valor_score": 5,
           "recomendacion": {
             "title": "Possible migration",
@@ -701,7 +701,7 @@
           }
         },
         {
-          "texto": "Confirmado por médico",
+          "texto": "Confirmed by doctor",
           "valor_score": 10,
           "recomendacion": {
             "title": "Signal of high complexity",
@@ -876,27 +876,27 @@
   "red_alert_triggers": [
     {
       "question_index": 7,
-      "answer": "Varias veces",
+      "answer": "Several times",
       "label": "Recurrent discharge or ulceration"
     },
     {
       "question_index": 14,
-      "answer": "Varias veces",
+      "answer": "Several times",
       "label": "Fiebre repetida sin causa"
     },
     {
       "question_index": 15,
-      "answer": "Sí",
+      "answer": "Yes",
       "label": "Confirmed autoimmune diagnosis"
     },
     {
       "question_index": 19,
-      "answer": "Confirmado por médico",
+      "answer": "Confirmed by doctor",
       "label": "Confirmed migration"
     },
     {
       "question_index": 17,
-      "answer": "Más de una vez",
+      "answer": "More than once",
       "label": "Hospitalizaciones repetidas"
     }
   ]
