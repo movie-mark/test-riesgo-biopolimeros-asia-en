@@ -32,24 +32,24 @@
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Aún no es claro",
-            "description": "Si no estás seguro/a de qué te aplicaron, es útil reunir información básica: lugar, fecha aproximada, y cualquier documento o mensaje. Esto ayuda a orientar la valoración médica y a decidir qué estudios podrían ser necesarios."
+            "title": "Still unclear",
+            "description": "If you are unsure of what was injected, it is useful to gather basic information: location, approximate date, and any document or message. This helps guide the medical assessment and decide what studies might be necessary."
           }
         },
         {
           "texto": "No estoy muy seguro/a",
           "valor_score": 0.6,
           "recomendacion": {
-            "title": "Sospecha parcial",
-            "description": "Muchas personas no reciben información completa sobre el material aplicado. Si hay síntomas locales o generales, una consulta especializada puede aclarar la situación con examen físico y, si corresponde, imágenes o pruebas complementarias."
+            "title": "Partial suspicion",
+            "description": "Many people do not receive complete information about the injected material. If there are local or general symptoms, a specialized consultation can clarify the situation with a physical exam and, if appropriate, images or complementary tests."
           }
         },
         {
           "texto": "Sí",
           "valor_score": 1,
           "recomendacion": {
-            "title": "Exposición probable",
-            "description": "Tener claridad sobre una sustancia desconocida permite evaluar riesgos de manera más directa. Si presentas síntomas, una valoración médica puede ayudar a identificar complicaciones locales y signos de inflamación sistémica."
+            "title": "Probable exposure",
+            "description": "Being clear about an unknown substance allows for a more direct risk assessment. If you have symptoms, a medical assessment can help identify local complications and signs of systemic inflammation."
           }
         }
       ],
@@ -64,40 +64,40 @@
           "texto": "Menos de 6 meses",
           "valor_score": 0.2,
           "recomendacion": {
-            "title": "Periodo reciente",
-            "description": "En los primeros meses pueden aparecer inflamación, dolor y cambios de la piel. Si los síntomas son persistentes o progresivos, conviene una valoración para descartar infección, reacción inflamatoria u otras complicaciones."
+            "title": "Recent period",
+            "description": "In the first few months, inflammation, pain, and skin changes may appear. If the symptoms are persistent or progressive, an assessment is recommended to rule out infection, inflammatory reaction, or other complications."
           }
         },
         {
           "texto": "Entre 6 meses y 2 años",
           "valor_score": 0.5,
           "recomendacion": {
-            "title": "Riesgo de evolución",
-            "description": "En este rango pueden aparecer nódulos, endurecimiento o síntomas generales que antes no existían. Un control médico puede identificar signos tempranos de complicación y orientar el manejo."
+            "title": "Risk of progression",
+            "description": "In this range, nodules, hardening, or general symptoms that did not exist before may appear. A medical check-up can identify early signs of complication and guide management."
           }
         },
         {
           "texto": "Entre 2 y 5 años",
           "valor_score": 0.7,
           "recomendacion": {
-            "title": "Posibles complicaciones tardías",
-            "description": "Algunas complicaciones se manifiestan años después, incluyendo síntomas locales persistentes y signos sistémicos. Si notas empeoramiento, es razonable priorizar una valoración especializada."
+            "title": "Possible late complications",
+            "description": "Some complications manifest years later, including persistent local symptoms and systemic signs. If you notice worsening, it is reasonable to prioritize a specialized assessment."
           }
         },
         {
           "texto": "Más de 5 años",
           "valor_score": 1,
           "recomendacion": {
-            "title": "Complicaciones de larga evolución",
-            "description": "Con el tiempo puede aumentar el riesgo de inflamación crónica, migración del material y síntomas sistémicos. Una evaluación completa puede ayudar a definir la severidad y las opciones de tratamiento."
+            "title": "Long-term complications",
+            "description": "Over time, the risk of chronic inflammation, material migration, and systemic symptoms can increase. A complete assessment can help define severity and treatment options."
           }
         },
         {
           "texto": "No lo recuerdo con exactitud",
           "valor_score": 0.6,
           "recomendacion": {
-            "title": "Fecha incierta",
-            "description": "No recordar la fecha es común. Aun así, los síntomas actuales son la prioridad: si hay dolor, secreción, fiebre o empeoramiento, es recomendable valoración médica para determinar el siguiente paso."
+            "title": "Uncertain date",
+            "description": "Not remembering the date is common. Even so, current symptoms are the priority: if there is pain, discharge, fever, or worsening, a medical assessment is recommended to determine the next step."
           }
         }
       ],
@@ -112,32 +112,32 @@
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin dolor local",
-            "description": "La ausencia de dolor es una señal favorable, pero no descarta otras complicaciones. Si hay cambios visibles o síntomas generales, conviene mantener seguimiento."
+            "title": "No local pain",
+            "description": "The absence of pain is a favorable sign, but does not rule out other complications. If there are visible changes or general symptoms, it is advisable to maintain follow-up."
           }
         },
         {
           "texto": "Ocasional",
           "valor_score": 3,
           "recomendacion": {
-            "title": "Dolor intermitente",
-            "description": "El dolor ocasional puede relacionarse con inflamación leve o sensibilidad local. Si aumenta en frecuencia o intensidad, se recomienda evaluación para identificar su causa."
+            "title": "Intermittent pain",
+            "description": "Occasional pain can be related to mild inflammation or local sensitivity. If it increases in frequency or intensity, an evaluation is recommended to identify its cause."
           }
         },
         {
           "texto": "Frecuente",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Dolor persistente",
-            "description": "El dolor frecuente sugiere inflamación sostenida o reacción local. Una valoración puede ayudar a determinar si hay nódulos, migración u otras complicaciones asociadas."
+            "title": "Persistent pain",
+            "description": "Frequent pain suggests sustained inflammation or local reaction. An assessment can help determine if there are nodules, migration, or other associated complications."
           }
         },
         {
           "texto": "Constante",
           "valor_score": 8,
           "recomendacion": {
-            "title": "Dolor constante",
-            "description": "El dolor constante es una señal de alerta clínica que amerita evaluación prioritaria. Puede asociarse a inflamación importante, compromiso tisular o complicaciones que requieren manejo médico."
+            "title": "Constant pain",
+            "description": "Constant pain is a clinical warning sign that warrants priority evaluation. It can be associated with significant inflammation, tissue compromise, or complications that require medical management."
           }
         }
       ],
@@ -152,32 +152,32 @@
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin inflamación evidente",
-            "description": "No observar inflamación es positivo. Aun así, si existen otros síntomas locales o generales, una revisión médica puede orientar el riesgo real."
+            "title": "No evident inflammation",
+            "description": "Not observing inflammation is positive. Even so, if other local or general symptoms exist, a medical review can guide the real risk."
           }
         },
         {
           "texto": "Leve",
           "valor_score": 3,
           "recomendacion": {
-            "title": "Inflamación leve",
-            "description": "La inflamación leve puede ser intermitente y asociarse a irritación local. Si persiste o progresa, conviene una evaluación para descartar complicaciones."
+            "title": "Mild inflammation",
+            "description": "Mild inflammation can be intermittent and associated with local irritation. If it persists or progresses, an evaluation is recommended to rule out complications."
           }
         },
         {
           "texto": "Moderada",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Inflamación moderada",
-            "description": "La inflamación moderada sostenida puede indicar reacción inflamatoria crónica. Una valoración clínica puede ayudar a decidir si se requieren estudios por imágenes."
+            "title": "Moderate inflammation",
+            "description": "Sustained moderate inflammation can indicate chronic inflammatory reaction. A clinical assessment can help decide if imaging studies are required."
           }
         },
         {
           "texto": "Severa",
           "valor_score": 8,
           "recomendacion": {
-            "title": "Inflamación severa",
-            "description": "Inflamación severa es una señal de alarma, especialmente si hay dolor, calor local o cambios en la piel. Recomendable atención médica prioritaria."
+            "title": "Severe inflammation",
+            "description": "Severe inflammation is a warning sign, especially if there is pain, local heat, or skin changes. Priority medical attention is recommended."
           }
         }
       ],
@@ -192,24 +192,24 @@
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin nódulos aparentes",
-            "description": "No detectar nódulos reduce la probabilidad de reacción local marcada. Aun así, cambios sutiles pueden requerir exploración clínica si hay síntomas."
+            "title": "No apparent nodules",
+            "description": "Not detecting nodules reduces the probability of a marked local reaction. Even so, subtle changes may require clinical exploration if there are symptoms."
           }
         },
         {
           "texto": "Pequeños",
           "valor_score": 4,
           "recomendacion": {
-            "title": "Nódulos pequeños",
-            "description": "Los nódulos pequeños pueden corresponder a inflamación localizada. Una valoración médica puede determinar su naturaleza y si hay signos de progresión."
+            "title": "Small nodules",
+            "description": "Small nodules can correspond to localized inflammation. A medical assessment can determine their nature and if there are signs of progression."
           }
         },
         {
           "texto": "Múltiples/grandes",
           "valor_score": 8,
           "recomendacion": {
-            "title": "Nódulos múltiples/grandes",
-            "description": "La presencia de múltiples nódulos o masas grandes sugiere compromiso local significativo. Es recomendable evaluación especializada para estimar extensión y opciones de manejo."
+            "title": "Multiple/large nodules",
+            "description": "The presence of multiple nodules or large masses suggests significant local compromise. Specialized evaluation is recommended to estimate extension and management options."
           }
         }
       ],
@@ -218,30 +218,30 @@
       "index": 5
     },
     {
-      "pregunta": "¿Ha tenido cambios de coloración en la piel (rojiza, violácea, oscura) en esa zona?",
+      "pregunta": "Have you had skin color changes (reddish, purplish, dark) in that area?",
       "opciones": [
         {
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin cambios visibles",
-            "description": "No hay señales cutáneas evidentes. Mantén vigilancia si aparece dolor, inflamación o sensibilidad, ya que los cambios pueden ser progresivos."
+            "title": "No visible changes",
+            "description": "There are no evident skin signs. Maintain surveillance if pain, inflammation, or sensitivity appears, as changes can be progressive."
           }
         },
         {
           "texto": "Leves",
           "valor_score": 3,
           "recomendacion": {
-            "title": "Cambios leves",
-            "description": "Los cambios leves pueden relacionarse con irritación o inflamación superficial. Si aumentan o se acompañan de dolor, conviene valoración médica."
+            "title": "Mild changes",
+            "description": "Mild changes can be related to irritation or superficial inflammation. If they increase or are accompanied by pain, a medical assessment is recommended."
           }
         },
         {
           "texto": "Notorios",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Cambios notorios",
-            "description": "Cambios notorios en la piel pueden indicar inflamación importante o compromiso de tejidos. Se recomienda evaluación prioritaria, especialmente si hay calor local o dolor constante."
+            "title": "Noticeable changes",
+            "description": "Noticeable changes in the skin can indicate significant inflammation or tissue compromise. Priority evaluation is recommended, especially if there is local heat or constant pain."
           }
         }
       ],
@@ -250,30 +250,30 @@
       "index": 6
     },
     {
-      "pregunta": "¿Ha presentado salida de líquido, secreción o ulceraciones en la zona?",
+      "pregunta": "Have you experienced fluid leakage, discharge, or ulcerations in the area?",
       "opciones": [
         {
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin secreción",
-            "description": "La ausencia de secreción es un buen signo. Si hay dolor o inflamación, aún puede existir reacción local; por eso se recomienda seguimiento si los síntomas persisten."
+            "title": "No discharge",
+            "description": "The absence of discharge is a good sign. If there is pain or inflammation, a local reaction can still exist; therefore, follow-up is recommended if symptoms persist."
           }
         },
         {
           "texto": "Una vez",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Episodio aislado",
-            "description": "Un episodio de secreción o ulceración puede asociarse a inflamación o infección. Es recomendable evaluación médica para descartar complicaciones que requieran tratamiento."
+            "title": "Isolated episode",
+            "description": "An episode of discharge or ulceration can be associated with inflammation or infection. A medical evaluation is recommended to rule out complications that require treatment."
           }
         },
         {
           "texto": "Varias veces",
           "valor_score": 10,
           "recomendacion": {
-            "title": "Alerta clínica",
-            "description": "Secreción o ulceración recurrente es una señal de alarma que amerita valoración prioritaria. Puede indicar infección, reacción inflamatoria severa o compromiso tisular que requiere manejo especializado."
+            "title": "Clinical alert",
+            "description": "Recurrent discharge or ulceration is a warning sign that warrants priority assessment. It can indicate infection, severe inflammatory reaction, or tissue compromise that requires specialized management."
           }
         }
       ],
@@ -288,32 +288,32 @@
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Energía conservada",
-            "description": "No reportar fatiga intensa es positivo. Si aparecen otros síntomas sistémicos, conviene valorarlos en conjunto para orientar el riesgo."
+            "title": "Energy conserved",
+            "description": "Not reporting intense fatigue is positive. If other systemic symptoms appear, it is advisable to evaluate them together to guide the risk."
           }
         },
         {
           "texto": "A veces",
           "valor_score": 3,
           "recomendacion": {
-            "title": "Fatiga ocasional",
-            "description": "La fatiga ocasional puede tener múltiples causas. Si se acompaña de dolor muscular, articular o trastornos del sueño, puede ser útil una valoración médica integral."
+            "title": "Occasional fatigue",
+            "description": "Occasional fatigue can have multiple causes. If it is accompanied by muscle, joint pain or sleep disorders, a comprehensive medical assessment can be useful."
           }
         },
         {
           "texto": "Frecuente",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Fatiga frecuente",
-            "description": "La fatiga frecuente puede ser compatible con inflamación sistémica o trastornos asociados. Una evaluación puede orientar estudios y descartar otras causas."
+            "title": "Frequent fatigue",
+            "description": "Frequent fatigue can be compatible with systemic inflammation or associated disorders. An evaluation can guide studies and rule out other causes."
           }
         },
         {
           "texto": "Siempre",
           "valor_score": 8,
           "recomendacion": {
-            "title": "Fatiga marcada",
-            "description": "Fatiga constante que no mejora con descanso es una señal importante. Se recomienda valoración médica para identificar causas inflamatorias, autoinmunes u otras condiciones tratables."
+            "title": "Marked fatigue",
+            "description": "Constant fatigue that does not improve with rest is an important sign. A medical assessment is recommended to identify inflammatory, autoimmune causes, or other treatable conditions."
           }
         }
       ],
@@ -328,32 +328,32 @@
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin mialgias",
-            "description": "No presentar dolor muscular generalizado reduce el componente sistémico. Mantén vigilancia si aparecen otros síntomas como fatiga, fiebre o dolor articular."
+            "title": "No myalgias",
+            "description": "Not presenting generalized muscle pain reduces the systemic component. Maintain surveillance if other symptoms such as fatigue, fever, or joint pain appear."
           }
         },
         {
           "texto": "Leve",
           "valor_score": 3,
           "recomendacion": {
-            "title": "Mialgias leves",
-            "description": "Dolores musculares leves pueden ser inespecíficos. Si son persistentes y se acompañan de fatiga o dolor articular, conviene valoración médica."
+            "title": "Mild myalgias",
+            "description": "Mild muscle pains can be nonspecific. If they are persistent and accompanied by fatigue or joint pain, a medical assessment is recommended."
           }
         },
         {
           "texto": "Moderado",
           "valor_score": 5,
           "recomendacion": {
-            "title": "Mialgias moderadas",
-            "description": "Dolor muscular moderado y sostenido puede ser compatible con un proceso inflamatorio. Un enfoque clínico integral ayuda a orientar el diagnóstico diferencial."
+            "title": "Moderate myalgias",
+            "description": "Sustained moderate muscle pain can be compatible with an inflammatory process. A comprehensive clinical approach helps guide the differential diagnosis."
           }
         },
         {
           "texto": "Severo",
           "valor_score": 7,
           "recomendacion": {
-            "title": "Mialgias severas",
-            "description": "Dolor muscular severo limita la funcionalidad y amerita evaluación. Es importante descartar causas inflamatorias y autoinmunes, especialmente si hay otros síntomas sistémicos."
+            "title": "Severe myalgias",
+            "description": "Severe muscle pain limits functionality and warrants evaluation. It is important to rule out inflammatory and autoimmune causes, especially if there are other systemic symptoms."
           }
         }
       ],
@@ -368,32 +368,32 @@
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin artralgias",
-            "description": "La ausencia de dolor articular es favorable. Si aparece rigidez matutina, hinchazón o dolor persistente, conviene valorarlo a tiempo."
+            "title": "No arthralgias",
+            "description": "The absence of joint pain is favorable. If morning stiffness, swelling, or persistent pain appears, it is advisable to evaluate it in time."
           }
         },
         {
           "texto": "Ocasional",
           "valor_score": 3,
           "recomendacion": {
-            "title": "Artralgias ocasionales",
-            "description": "El dolor articular ocasional puede tener múltiples causas. Si aumenta o se hace recurrente junto a fatiga, conviene evaluación clínica."
+            "title": "Occasional arthralgias",
+            "description": "Occasional joint pain can have multiple causes. If it increases or becomes recurrent along with fatigue, a clinical evaluation is recommended."
           }
         },
         {
           "texto": "Frecuente",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Artralgias frecuentes",
-            "description": "Dolor articular frecuente puede sugerir inflamación sistémica. Un especialista puede orientar estudios y evaluar signos de enfermedad inflamatoria."
+            "title": "Frequent arthralgias",
+            "description": "Frequent joint pain can suggest systemic inflammation. A specialist can guide studies and evaluate signs of inflammatory disease."
           }
         },
         {
           "texto": "Diario",
           "valor_score": 8,
           "recomendacion": {
-            "title": "Artralgias diarias",
-            "description": "Dolor articular diario afecta calidad de vida y requiere valoración médica. Es importante descartar procesos autoinmunes o inflamatorios y plantear manejo oportuno."
+            "title": "Daily arthralgias",
+            "description": "Daily joint pain affects quality of life and requires medical assessment. It is important to rule out autoimmune or inflammatory processes and plan timely management."
           }
         }
       ],
@@ -408,32 +408,32 @@
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin caída notable",
-            "description": "No reportar caída de cabello reduce un signo sistémico frecuente. Si aparecen otros síntomas generales, conviene valorarlos en conjunto."
+            "title": "No noticeable hair loss",
+            "description": "Not reporting hair loss reduces a frequent systemic sign. If other general symptoms appear, it is advisable to evaluate them together."
           }
         },
         {
           "texto": "Leve",
           "valor_score": 2,
           "recomendacion": {
-            "title": "Caída leve",
-            "description": "La caída leve puede asociarse a estrés, cambios hormonales u otras causas. Si se acompaña de fatiga, dolor articular o problemas de piel, conviene evaluación."
+            "title": "Mild hair loss",
+            "description": "Mild hair loss can be associated with stress, hormonal changes, or other causes. If accompanied by fatigue, joint pain, or skin problems, an evaluation is recommended."
           }
         },
         {
           "texto": "Moderada",
           "valor_score": 4,
           "recomendacion": {
-            "title": "Caída moderada",
-            "description": "Caída moderada y persistente puede ser un signo sistémico. Es recomendable valoración para descartar deficiencias y procesos inflamatorios."
+            "title": "Moderate hair loss",
+            "description": "Moderate and persistent hair loss can be a systemic sign. An assessment is recommended to rule out deficiencies and inflammatory processes."
           }
         },
         {
           "texto": "Abundante",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Caída abundante",
-            "description": "Caída abundante es una señal importante, especialmente si coincide con fatiga y dolores. Se recomienda evaluación médica integral para orientar causas tratables."
+            "title": "Abundant hair loss",
+            "description": "Abundant hair loss is an important sign, especially if it coincides with fatigue and pain. A comprehensive medical evaluation is recommended to guide treatable causes."
           }
         }
       ],
@@ -448,32 +448,32 @@
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Cognición preservada",
-            "description": "No reportar alteraciones cognitivas es favorable. Si aparecen fatiga intensa, dolor o trastornos del sueño, pueden influir en la concentración; conviene valorarlos."
+            "title": "Preserved cognition",
+            "description": "Not reporting cognitive alterations is favorable. If intense fatigue, pain, or sleep disorders appear, they can influence concentration; it is advisable to evaluate them."
           }
         },
         {
           "texto": "Leve",
           "valor_score": 2,
           "recomendacion": {
-            "title": "Dificultades leves",
-            "description": "Problemas leves de memoria o concentración pueden asociarse a fatiga, estrés o sueño. Si persisten o empeoran, conviene evaluación para descartar causas tratables."
+            "title": "Mild difficulties",
+            "description": "Mild memory or concentration problems can be associated with fatigue, stress, or sleep. If they persist or worsen, an evaluation is recommended to rule out treatable causes."
           }
         },
         {
           "texto": "Moderado",
           "valor_score": 4,
           "recomendacion": {
-            "title": "Dificultades moderadas",
-            "description": "Alteraciones moderadas de memoria o concentración pueden ser parte de un cuadro sistémico. Una valoración médica ayuda a orientar estudios y manejo."
+            "title": "Moderate difficulties",
+            "description": "Moderate alterations in memory or concentration can be part of a systemic picture. A medical assessment helps guide studies and management."
           }
         },
         {
           "texto": "Severo",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Dificultades severas",
-            "description": "Problemas severos de memoria o concentración afectan la vida diaria y requieren evaluación. Es importante descartar causas inflamatorias, metabólicas o neurológicas."
+            "title": "Severe difficulties",
+            "description": "Severe memory or concentration problems affect daily life and require evaluation. It is important to rule out inflammatory, metabolic, or neurological causes."
           }
         }
       ],
@@ -482,38 +482,38 @@
       "index": 12
     },
     {
-      "pregunta": "¿Tiene trastornos del sueño desde la aplicación?",
+      "pregunta": "Do you have sleep disorders since the injection?",
       "opciones": [
         {
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sueño adecuado",
-            "description": "Dormir bien favorece la recuperación y reduce el impacto del estrés. Si aparecen otros síntomas sistémicos, mantén hábitos de sueño saludables."
+            "title": "Adequate sleep",
+            "description": "Sleeping well favors recovery and reduces the impact of stress. If other systemic symptoms appear, maintain healthy sleep habits."
           }
         },
         {
           "texto": "Ocasionales",
           "valor_score": 2,
           "recomendacion": {
-            "title": "Trastornos ocasionales",
-            "description": "Alteraciones ocasionales del sueño pueden deberse a dolor, ansiedad o estrés. Si se hacen frecuentes o se acompañan de fatiga marcada, conviene valoración."
+            "title": "Occasional disorders",
+            "description": "Occasional sleep alterations can be due to pain, anxiety, or stress. If they become frequent or are accompanied by marked fatigue, an assessment is recommended."
           }
         },
         {
           "texto": "Frecuentes",
           "valor_score": 4,
           "recomendacion": {
-            "title": "Trastornos frecuentes",
-            "description": "Problemas frecuentes de sueño pueden agravar fatiga y dolor. Una evaluación integral puede orientar medidas de higiene del sueño y descartar causas médicas."
+            "title": "Frequent disorders",
+            "description": "Frequent sleep problems can aggravate fatigue and pain. A comprehensive evaluation can guide sleep hygiene measures and rule out medical causes."
           }
         },
         {
           "texto": "Severos",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Trastornos severos",
-            "description": "Trastornos severos del sueño afectan la calidad de vida y la recuperación. Se recomienda valoración médica para identificar causas y plantear tratamiento."
+            "title": "Severe disorders",
+            "description": "Severe sleep disorders affect quality of life and recovery. A medical assessment is recommended to identify causes and plan treatment."
           }
         }
       ],
@@ -522,30 +522,30 @@
       "index": 13
     },
     {
-      "pregunta": "¿Ha tenido fiebre recurrente sin causa aparente desde la aplicación?",
+      "pregunta": "Have you had recurrent fever with no apparent cause since the injection?",
       "opciones": [
         {
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin fiebre recurrente",
-            "description": "No presentar fiebre recurrente es favorable. Si en el futuro aparece fiebre sin causa clara, conviene consultar para descartar infección o reacción inflamatoria."
+            "title": "No recurrent fever",
+            "description": "Not presenting recurrent fever is favorable. If unexplained fever appears in the future, it is advisable to consult to rule out infection or inflammatory reaction."
           }
         },
         {
           "texto": "Una vez",
           "valor_score": 4,
           "recomendacion": {
-            "title": "Un episodio de fiebre",
-            "description": "Un episodio aislado de fiebre puede tener múltiples causas. Si se repite o se acompaña de otros síntomas sistémicos, es importante valoración médica."
+            "title": "An episode of fever",
+            "description": "An isolated episode of fever can have multiple causes. If it repeats or is accompanied by other systemic symptoms, a medical assessment is important."
           }
         },
         {
           "texto": "Varias veces",
           "valor_score": 8,
           "recomendacion": {
-            "title": "Fiebre recurrente",
-            "description": "Fiebre recurrente sin causa aparente es una señal de alarma. Se recomienda valoración médica urgente para descartar infección, reacción al material o proceso inflamatorio sistémico."
+            "title": "Recurrent fever",
+            "description": "Recurrent fever with no apparent cause is a warning sign. Urgent medical assessment is recommended to rule out infection, reaction to the material, or systemic inflammatory process."
           }
         }
       ],
@@ -554,30 +554,30 @@
       "index": 14
     },
     {
-      "pregunta": "¿Le han diagnosticado alguna enfermedad autoinmune después de la aplicación?",
+      "pregunta": "Have you been diagnosed with an autoimmune disease after the injection?",
       "opciones": [
         {
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin diagnóstico autoinmune",
-            "description": "No tener diagnóstico autoinmune posterior es favorable. Si hay síntomas sugestivos (fatiga, dolor articular, alteraciones cutáneas), conviene valoración para descartar o confirmar."
+            "title": "No autoimmune diagnosis",
+            "description": "Not having a subsequent autoimmune diagnosis is favorable. If there are suggestive symptoms (fatigue, joint pain, skin alterations), an assessment is recommended to rule out or confirm."
           }
         },
         {
           "texto": "En estudio",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Estudio en curso",
-            "description": "Si hay sospecha de enfermedad autoinmune en estudio, es importante completar la evaluación y seguir las indicaciones del especialista. La asociación con biopolímeros debe ser valorada por el médico."
+            "title": "Study in progress",
+            "description": "If there is suspicion of an autoimmune disease under study, it is important to complete the evaluation and follow the specialist's instructions. The association with silicone injections (biopolymers) must be assessed by the doctor."
           }
         },
         {
           "texto": "Sí",
           "valor_score": 10,
           "recomendacion": {
-            "title": "Diagnóstico autoinmune",
-            "description": "Un diagnóstico autoinmune posterior a la aplicación requiere manejo especializado. Se recomienda seguimiento con reumatología o el especialista indicado y valorar con el médico la relación con el material aplicado."
+            "title": "Autoimmune diagnosis",
+            "description": "An autoimmune diagnosis subsequent to the injection requires specialized management. Follow-up with rheumatology or the indicated specialist is recommended, and the relationship with the injected material should be assessed with the doctor."
           }
         }
       ],
@@ -586,30 +586,30 @@
       "index": 15
     },
     {
-      "pregunta": "¿Los síntomas han empeorado con el tiempo?",
+      "pregunta": "Have the symptoms worsened over time?",
       "opciones": [
         {
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin progresión",
-            "description": "La ausencia de empeoramiento es un signo favorable. Aun así, es útil mantener seguimiento si hubo aplicación de sustancia desconocida."
+            "title": "No progression",
+            "description": "The absence of worsening is a favorable sign. Even so, it is useful to maintain follow-up if an unknown substance was injected."
           }
         },
         {
           "texto": "Leve",
           "valor_score": 4,
           "recomendacion": {
-            "title": "Progresión leve",
-            "description": "Un empeoramiento leve sugiere evolución del proceso local o sistémico. Una valoración puede ayudar a detener la progresión y aliviar síntomas."
+            "title": "Mild progression",
+            "description": "Mild worsening suggests progression of the local or systemic process. An assessment can help stop the progression and relieve symptoms."
           }
         },
         {
           "texto": "Claro empeoramiento",
           "valor_score": 8,
           "recomendacion": {
-            "title": "Progresión evidente",
-            "description": "Empeoramiento claro es una señal importante que amerita evaluación prioritaria. Identificar la causa y la extensión ayuda a definir manejo y reducir complicaciones."
+            "title": "Evident progression",
+            "description": "Clear worsening is an important sign that warrants priority evaluation. Identifying the cause and extent helps define management and reduce complications."
           }
         }
       ],
@@ -618,21 +618,21 @@
       "index": 16
     },
     {
-      "pregunta": "¿Ha necesitado hospitalización por complicaciones relacionadas con esta situación?",
+      "pregunta": "Have you required hospitalization due to complications related to this situation?",
       "opciones": [
         {
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin hospitalizaciones",
-            "description": "No haber requerido hospitalización es favorable. Sin embargo, si existen señales de alarma, una valoración especializada sigue siendo recomendable."
+            "title": "No hospitalizations",
+            "description": "Not having required hospitalization is favorable. However, if warning signs exist, a specialized assessment is still recommended."
           }
         },
         {
           "texto": "Una vez",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Complicación significativa",
+            "title": "Significant complication",
             "description": "Una hospitalización sugiere un evento clínico relevante. Es importante revisar causas, tratamientos previos y evolución para decidir el siguiente paso."
           }
         },
@@ -640,8 +640,8 @@
           "texto": "Más de una vez",
           "valor_score": 10,
           "recomendacion": {
-            "title": "Alta prioridad",
-            "description": "Hospitalizaciones repetidas indican alta complejidad clínica. Se recomienda evaluación prioritaria con equipo especializado para plan diagnóstico y terapéutico integral."
+            "title": "High priority",
+            "description": "Repeated hospitalizations indicate high clinical complexity. Priority evaluation with a specialized team is recommended for a comprehensive diagnostic and therapeutic plan."
           }
         }
       ],
@@ -650,30 +650,30 @@
       "index": 17
     },
     {
-      "pregunta": "¿Le han recomendado cirugía o extracción del material?",
+      "pregunta": "Have you been recommended surgery or removal of the material?",
       "opciones": [
         {
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin recomendación quirúrgica",
-            "description": "No tener recomendación quirúrgica puede indicar un cuadro menos evidente o no valorado aún. Si hay síntomas persistentes, conviene una evaluación específica."
+            "title": "No surgical recommendation",
+            "description": "Not having a surgical recommendation may indicate a less evident picture or one not yet evaluated. If persistent symptoms exist, a specific evaluation is recommended."
           }
         },
         {
           "texto": "Recomendada pero no realizada",
           "valor_score": 6,
           "recomendacion": {
-            "title": "Valoración quirúrgica pendiente",
-            "description": "Si ya se recomendó cirugía, es importante entender el motivo y el plan. Una segunda opinión especializada puede aclarar riesgos, beneficios y expectativas realistas."
+            "title": "Pending surgical assessment",
+            "description": "If surgery has already been recommended, it is important to understand the reason and the plan. A second specialized opinion can clarify risks, benefits, and realistic expectations."
           }
         },
         {
           "texto": "Ya realizada",
           "valor_score": 4,
           "recomendacion": {
-            "title": "Seguimiento post-tratamiento",
-            "description": "Tras una intervención, es clave el seguimiento clínico para evaluar mejoría y detectar síntomas persistentes. Si continúas con molestias, conviene reevaluación integral."
+            "title": "Post-treatment follow-up",
+            "description": "After an intervention, clinical follow-up is key to evaluate improvement and detect persistent symptoms. If you continue with discomfort, a comprehensive reevaluation is recommended."
           }
         }
       ],
@@ -682,30 +682,30 @@
       "index": 18
     },
     {
-      "pregunta": "¿Ha presentado migración del material a otras zonas del cuerpo?",
+      "pregunta": "Has the material migrated to other areas of your body?",
       "opciones": [
         {
           "texto": "No",
           "valor_score": 0,
           "recomendacion": {
-            "title": "Sin migración aparente",
-            "description": "No notar migración es positivo. Si hay nódulos, dolor o cambios en otras zonas, conviene valoración para descartar migración no evidente."
+            "title": "No apparent migration",
+            "description": "Not noticing migration is positive. If there are nodules, pain, or changes in other areas, an assessment is recommended to rule out non-evident migration."
           }
         },
         {
           "texto": "Sospecha",
           "valor_score": 5,
           "recomendacion": {
-            "title": "Posible migración",
-            "description": "La migración puede manifestarse con bultos, dolor o cambios de forma en zonas cercanas o distantes. Una valoración clínica e imágenes pueden confirmar o descartar."
+            "title": "Possible migration",
+            "description": "Migration can manifest with lumps, pain, or changes in shape in nearby or distant areas. A clinical assessment and images can confirm or rule out."
           }
         },
         {
           "texto": "Confirmado por médico",
           "valor_score": 10,
           "recomendacion": {
-            "title": "Señal de alta complejidad",
-            "description": "La migración confirmada sugiere compromiso extendido. Se recomienda evaluación especializada para definir severidad, riesgos y opciones de manejo."
+            "title": "Signal of high complexity",
+            "description": "Confirmed migration suggests extended compromise. Specialized evaluation is recommended to define severity, risks, and management options."
           }
         }
       ],
@@ -714,86 +714,86 @@
       "index": 19
     },
     {
-      "pregunta": "En una escala del 1 al 10, ¿qué tanto ha afectado esto tu calidad de vida? (1 = mínimo, 10 = severo)",
+      "pregunta": "On a scale of 1 to 10, how much has this affected your quality of life? (1 = minimum, 10 = severe)",
       "opciones": [
         {
           "texto": "1",
           "valor_score": 0.1,
           "recomendacion": {
-            "title": "Impacto mínimo",
-            "description": "Si el impacto es mínimo, puede ser buen momento para una valoración preventiva y educación sobre señales de alarma. Así se detectan cambios a tiempo y se planifica seguimiento."
+            "title": "Minimum impact",
+            "description": "If the impact is minimal, it may be a good time for a preventive assessment and education about warning signs. This way, changes are detected early, and follow-up is planned."
           }
         },
         {
           "texto": "2",
           "valor_score": 0.2,
           "recomendacion": {
-            "title": "Impacto bajo",
-            "description": "Un impacto bajo sugiere síntomas controlables, pero conviene vigilar evolución. Considera una consulta si aparecen nuevos síntomas o si los actuales aumentan."
+            "title": "Low impact",
+            "description": "A low impact suggests controllable symptoms, but it is advisable to monitor evolution. Consider a consultation if new symptoms appear or if current ones increase."
           }
         },
         {
           "texto": "3",
           "valor_score": 0.3,
           "recomendacion": {
-            "title": "Impacto leve",
-            "description": "Un impacto leve puede relacionarse con molestias intermitentes. Un plan de evaluación puede ayudarte a entender causas y prevenir progresión."
+            "title": "Mild impact",
+            "description": "A mild impact can be related to intermittent discomfort. An evaluation plan can help you understand causes and prevent progression."
           }
         },
         {
           "texto": "4",
           "valor_score": 0.4,
           "recomendacion": {
-            "title": "Impacto leve-moderado",
-            "description": "Cuando el impacto comienza a sentirse en actividades diarias, vale la pena una valoración más completa. El objetivo es identificar factores tratables y mejorar bienestar."
+            "title": "Mild-moderate impact",
+            "description": "When the impact begins to be felt in daily activities, a more complete assessment is worthwhile. The goal is to identify treatable factors and improve well-being."
           }
         },
         {
           "texto": "5",
           "valor_score": 0.5,
           "recomendacion": {
-            "title": "Impacto moderado",
-            "description": "Impacto moderado sugiere necesidad de un plan de manejo. Una consulta especializada puede orientar estudios, opciones terapéuticas y seguimiento adecuado."
+            "title": "Moderate impact",
+            "description": "A moderate impact suggests the need for a management plan. A specialized consultation can guide studies, therapeutic options, and appropriate follow-up."
           }
         },
         {
           "texto": "6",
           "valor_score": 0.6,
           "recomendacion": {
-            "title": "Impacto moderado-alto",
-            "description": "Si el impacto es moderado-alto, suele existir una carga física o emocional significativa. Es recomendable valoración para definir prioridades de atención y tratamiento."
+            "title": "Moderate-high impact",
+            "description": "If the impact is moderate-high, there is usually a significant physical or emotional burden. An assessment is recommended to define priorities for care and treatment."
           }
         },
         {
           "texto": "7",
           "valor_score": 0.7,
           "recomendacion": {
-            "title": "Impacto alto",
-            "description": "Un impacto alto indica afectación clara de la vida diaria. Una evaluación integral puede ayudar a identificar complicaciones y construir un plan de manejo realista."
+            "title": "High impact",
+            "description": "A high impact indicates clear affectation of daily life. A comprehensive evaluation can help identify complications and build a realistic management plan."
           }
         },
         {
           "texto": "8",
           "valor_score": 0.8,
           "recomendacion": {
-            "title": "Impacto muy alto",
-            "description": "Impacto muy alto sugiere necesidad de atención prioritaria. Es importante valorar tanto síntomas locales como sistémicos para tomar decisiones informadas."
+            "title": "Very high impact",
+            "description": "A very high impact suggests the need for priority attention. It is important to evaluate both local and systemic symptoms to make informed decisions."
           }
         },
         {
           "texto": "9",
           "valor_score": 0.9,
           "recomendacion": {
-            "title": "Impacto severo",
-            "description": "Impacto severo suele acompañarse de síntomas persistentes y limitantes. Se recomienda evaluación prioritaria con especialistas para definir el abordaje más seguro."
+            "title": "Severe impact",
+            "description": "A severe impact is usually accompanied by persistent and limiting symptoms. Priority evaluation with specialists is recommended to define the safest approach."
           }
         },
         {
           "texto": "10",
           "valor_score": 1,
           "recomendacion": {
-            "title": "Impacto crítico",
-            "description": "Si el impacto es crítico, es importante buscar valoración médica prioritaria. Un equipo especializado puede orientar el diagnóstico, aliviar síntomas y reducir riesgos de complicaciones."
+            "title": "Critical impact",
+            "description": "If the impact is critical, it is important to seek priority medical assessment. A specialized team can guide the diagnosis, relieve symptoms, and reduce risks of complications."
           }
         }
       ],
@@ -820,7 +820,7 @@
           ]
         }
       ],
-      "text": "Agendar valoración preventiva",
+      "text": "Schedule preventive assessment",
       "url": "/agenda/valoracion-preventiva",
       "style": "primary",
       "priority": 1,
@@ -840,7 +840,7 @@
           ]
         }
       ],
-      "text": "Solicitar valoración especializada",
+      "text": "Request specialized assessment",
       "url": "https://wa.me/573103314120",
       "style": "primary",
       "priority": 1,
@@ -860,7 +860,7 @@
           ]
         }
       ],
-      "text": "Agendar evaluación prioritaria",
+      "text": "Schedule priority assessment",
       "url": "/agenda/prioritaria",
       "style": "accent",
       "priority": 1,
@@ -877,7 +877,7 @@
     {
       "question_index": 7,
       "answer": "Varias veces",
-      "label": "Secreción recurrente o ulceración"
+      "label": "Recurrent discharge or ulceration"
     },
     {
       "question_index": 14,
@@ -887,12 +887,12 @@
     {
       "question_index": 15,
       "answer": "Sí",
-      "label": "Diagnóstico autoinmune confirmado"
+      "label": "Confirmed autoimmune diagnosis"
     },
     {
       "question_index": 19,
       "answer": "Confirmado por médico",
-      "label": "Migración confirmada"
+      "label": "Confirmed migration"
     },
     {
       "question_index": 17,
