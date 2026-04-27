@@ -1106,7 +1106,7 @@
 
       // Renderizar recomendaciones y CTAs (pasar objeto indexado por question_index)
       renderRecommendations(score, respuestasPorIndex);
-      renderCTAs(score, respuestasPorIndex);
+      renderCTAs(score, respuestasPorIndex, isRedAlert);
     });
     
     // Función para evaluar condiciones de plantillas
@@ -1266,7 +1266,7 @@
     }
     
     // Función para renderizar CTAs
-    function renderCTAs(score, respuestas) {
+    function renderCTAs(score, respuestas, isRedAlert = false) {
       const ctaList = document.getElementById('ctaList');
       if (!ctaList) return;
 
@@ -1277,7 +1277,8 @@
       const ctaSubtitleEl = ctaSectionEl ? ctaSectionEl.querySelector('.cta-subtitle') : null;
       const ctaTrustRowEl = ctaSectionEl ? ctaSectionEl.querySelector('.cta-trust-row') : null;
 
-      const ctaContent = score <= 30 ? {
+      const effectiveScore = isRedAlert ? 100 : score;
+      const ctaContent = effectiveScore <= 30 ? {
         badgeText: 'Preventive assessment recommended',
         badgeBg: 'rgba(15,118,110,0.12)',
         badgeBorder: 'rgba(15,118,110,0.3)',
