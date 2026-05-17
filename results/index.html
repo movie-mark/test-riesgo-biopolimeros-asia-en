@@ -1352,9 +1352,34 @@
         return ['1', '2', '3'].includes(adValue) ? adValue : '';
       }
 
-      const adVariant = getAdVariantFromParams();
-      const utmContent = adVariant ? `score_de_progresion_anuncio_${adVariant}` : 'score_de_progresion';
-      const ctaUrl = `https://dr-crm-forms-production.up.railway.app/dr-rios?utm_source=redes_sociales_pagas&utm_medium=meta&utm_campaign=biopolimeros&utm_content=${encodeURIComponent(utmContent)}`;
+      function buildTrackedCtaUrl(baseUrl) {
+        const currentParams = new URLSearchParams(window.location.search || '');
+        const destinationUrl = new URL(baseUrl);
+        const destinationParams = destinationUrl.searchParams;
+        const adVariant = getAdVariantFromParams();
+        const defaultUtmContent = adVariant ? `score_de_progresion_anuncio_${adVariant}` : 'score_de_progresion';
+
+        // Default values for biopolymers campaign.
+        if (!destinationParams.get('utm_source')) destinationParams.set('utm_source', 'redes_sociales_pagas');
+        if (!destinationParams.get('utm_medium')) destinationParams.set('utm_medium', 'meta');
+        if (!destinationParams.get('utm_campaign')) destinationParams.set('utm_campaign', 'biopolimeros');
+        if (!destinationParams.get('utm_content')) destinationParams.set('utm_content', defaultUtmContent);
+
+        // Preserve and forward attribution parameters from the current URL.
+        const trackingKeys = [
+          'fbclid', 'gclid', 'gbraid', 'wbraid',
+          'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'
+        ];
+        trackingKeys.forEach((key) => {
+          const value = currentParams.get(key);
+          if (value) destinationParams.set(key, value);
+        });
+
+        return destinationUrl.toString();
+      }
+
+      const baseFormUrl = 'https://pagina-web-car-git-main-juan-c-caicedo-rassis-projects.vercel.app/LandingProtocoloBasic/';
+      const ctaUrl = buildTrackedCtaUrl(baseFormUrl);
 
       const ctaTemplates = [{"trigger_conditions": [{"score_range": [0, 30]}], "text": "Leave your details and a specialized advisor will contact you", "url": ctaUrl, "style": "primary", "priority": 1, "style_obj": {"variant": "primary", "background_color": "#0F766E", "text_color": "#FFFFFF", "border_radius": "14px"}}, {"trigger_conditions": [{"score_range": [31, 60]}], "text": "Leave your details and a specialized advisor will contact you", "url": ctaUrl, "style": "primary", "priority": 1, "style_obj": {"variant": "primary", "background_color": "#1D4ED8", "text_color": "#FFFFFF", "border_radius": "14px"}}, {"trigger_conditions": [{"score_range": [61, 100]}], "text": "Leave your details and a specialized advisor will contact you", "url": ctaUrl, "style": "accent", "priority": 1, "style_obj": {"variant": "accent", "background_color": "#F97316", "text_color": "#0F172A", "border_radius": "14px"}}];
       
@@ -1411,12 +1436,21 @@
             : `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`;
           const subText = 'Start your healing now';
           const target = isWhatsApp ? 'target="_blank" rel="noopener"' : '';
-          return `<a href="${cta.url || '#'}" class="cta-button-hero" style="--cta-bg:${bgColor};--cta-text:${textColor};--cta-shadow:${shadowColor}" ${target}>${icon}<span class="cta-btn-text"><span class="cta-btn-label">${cta.text}</span><span class="cta-btn-sub">${subText}</span></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.55"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>`;
+          return `<a href="${cta.url || '#'}" data-base-url="${baseFormUrl}" class="cta-button-hero" style="--cta-bg:${bgColor};--cta-text:${textColor};--cta-shadow:${shadowColor}" ${target}>${icon}<span class="cta-btn-text"><span class="cta-btn-label">${cta.text}</span><span class="cta-btn-sub">${subText}</span></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.55"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>`;
         }).join('');
 
       // Renderizar el mismo botón en la sección CTA final
       const finalCtaList = document.getElementById('finalCtaList');
       if (finalCtaList) finalCtaList.innerHTML = ctaList.innerHTML;
+
+      const trackedCtas = document.querySelectorAll('.cta-button-hero[data-base-url]');
+      trackedCtas.forEach((button) => {
+        button.addEventListener('click', function () {
+          const baseUrl = this.getAttribute('data-base-url');
+          if (!baseUrl) return;
+          this.href = buildTrackedCtaUrl(baseUrl);
+        });
+      });
 
       } else {
         ctaList.innerHTML = '<p style="text-align: center; color: var(--form-text-secondary);">No recommended actions at this time.</p>';
